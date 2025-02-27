@@ -1,4 +1,5 @@
-# Investigating the Range as a Function of the Angle of Projection
+# Problem 1
+## Investigating the Range as a Function of the Angle of Projection
 
 ## Motivation
 Projectile motion, while seemingly simple, offers a rich playground for exploring fundamental principles of physics. The problem is straightforward: analyze how the range of a projectile depends on its angle of projection. Yet, beneath this simplicity lies a complex and versatile framework. The equations governing projectile motion involve both linear and quadratic relationships, making them accessible yet deeply insightful.
@@ -32,3 +33,122 @@ What makes this topic particularly compelling is the number of free parameters i
 - Start from the fundamental laws of motion and gradually build the general solution.
 - Use numerical methods or simulation tools to explore scenarios that go beyond simple analytical solutions.
 - Consider how this model connects to real-world systems, such as sports, engineering, and astrophysics.
+
+---
+
+# Answer
+
+## Investigating the Range as a Function of the Angle of Projection
+
+### **Step 1: Establish the Theoretical Foundation**
+
+#### **1. Understand the Concept of Projectile Motion**
+- A projectile follows a **parabolic** path due to the influence of gravity.
+- It has two independent motions:
+  - **Horizontal motion:** Constant velocity, since no acceleration (neglecting air resistance).
+  - **Vertical motion:** Accelerated motion under gravity.
+
+#### **2. Derive the Equations of Motion**
+- The horizontal and vertical displacement equations are:
+
+  $$ x(t) = v_0 \cos\theta \cdot t $$
+  $$ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 $$
+
+#### **3. Calculate the Time of Flight**
+- The projectile reaches the ground when $ y = 0 $, solving for time:
+
+  $$ T = \frac{2 v_0 \sin\theta}{g} $$
+
+#### **4. Derive the Range Equation**
+- The range is the horizontal distance at $ T $:
+
+  $$ R = v_0 \cos\theta \cdot T $$
+
+  - Substituting $ T $:
+
+    $$ R = \frac{v_0^2}{g} \sin 2\theta $$
+
+#### **5. Find the Optimal Angle for Maximum Range**
+- The range depends on $ \sin 2\theta $, which is maximized when $ 2\theta = 90^\circ $, or $ \theta = 45^\circ $.
+
+---
+
+### **Step 2: Analyze How Range Changes with Angle**
+
+#### **1. Varying the Angle from 0° to 90°**
+- Compute $ R $ for multiple angles and observe how it changes.
+
+#### **2. Effects of Initial Velocity**
+- Increase or decrease $ v_0 $ and check how it impacts $ R $.
+
+#### **3. Effects of Gravity**
+- Consider different values of $ g $ (e.g., Earth vs. Moon) and see how the range varies.
+
+#### **4. Find the Symmetry**
+- The equation $ R = \frac{v_0^2}{g} \sin 2\theta $ is **symmetric**, meaning:
+  - $ \theta = 30^\circ $ and $ \theta = 60^\circ $ give the same range.
+  - $ \theta = 20^\circ $ and $ \theta = 70^\circ $ also give the same range.
+
+---
+
+### **Step 3: Practical Applications**
+
+#### **1. Sports Applications**
+- Optimizing kick angles in soccer, golf, or basketball for maximum range.
+
+#### **2. Ballistics & Military Applications**
+- Determining the best firing angle for artillery.
+
+#### **3. Rocket Science**
+- Understanding launch angles for spacecraft trajectories.
+
+---
+
+### **Step 4: Implementation in Python**
+
+     import numpy as np
+     import matplotlib.pyplot as plt
+
+    def projectile_range(v0, g=9.81):
+
+    # Step 1: Define the range of angles
+    angles = np.linspace(0, 90, 100)  # Angle from 0 to 90 degrees
+    radians = np.radians(angles)  # Convert angles to radians
+
+    # Step 2: Compute the projectile range for each angle
+    ranges = (v0**2 / g) * np.sin(2 * radians)
+
+    # Step 3: Plot the results
+    plt.figure(figsize=(8,5))
+    plt.plot(angles, ranges, label=f'Initial Velocity: {v0} m/s')
+
+    # Step 4: Label axes and title
+    plt.xlabel('Angle of Projection (degrees)')
+    plt.ylabel('Range (m)')
+    plt.title('Projectile Range vs. Angle of Projection')
+
+    # Step 5: Add legend and grid
+    plt.legend()
+    plt.grid()
+
+    # Step 6: Display the plot
+    plt.show()
+
+    # Example usage
+    projectile_range(v0=20)
+
+---
+
+### **Step 5: Discussion & Limitations**
+
+#### **1. What does the graph show?**
+- A clear peak at $ \theta = 45^\circ $.
+- Symmetry in range for complementary angles.
+
+#### **2. Limitations of the Model**
+- Ignores air resistance.
+- Assumes flat ground and no wind.
+
+#### **3. How to Improve the Model?**
+- Add drag force.
+- Consider different launch heights.
