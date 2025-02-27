@@ -32,6 +32,3 @@ What makes this topic particularly compelling is the number of free parameters i
 - Start from the fundamental laws of motion and gradually build the general solution.
 - Use numerical methods or simulation tools to explore scenarios that go beyond simple analytical solutions.
 - Consider how this model connects to real-world systems, such as sports, engineering, and astrophysics.
-
-This task encourages a deep understanding of projectile motion while showcasing its versatility and applicability across various domains.
-
