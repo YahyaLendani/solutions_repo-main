@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Investigating the Range as a Function of the Angle of Projection - Physics and Mathematics</title>
+<title>Problem 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Investigating the Range as a Function of the Angle of Projection";
+        var mkdocs_page_name = "Problem 1";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,8 +46,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Investigating the Range as a Function of the Angle of Projection</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#task">Task</a>
@@ -181,7 +183,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Investigating the Range as a Function of the Angle of Projection</li>
+<li class="breadcrumb-item active">Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -189,7 +191,8 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h1 id="problem-1">Problem 1</h1>
+<h2 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h2>
 <h2 id="motivation">Motivation</h2>
 <p>Projectile motion, while seemingly simple, offers a rich playground for exploring fundamental principles of physics. The problem is straightforward: analyze how the range of a projectile depends on its angle of projection. Yet, beneath this simplicity lies a complex and versatile framework. The equations governing projectile motion involve both linear and quadratic relationships, making them accessible yet deeply insightful.</p>
 <p>What makes this topic particularly compelling is the number of free parameters involved in these equations, such as initial velocity, gravitational acceleration, and launch height. These parameters give rise to a diverse set of solutions that can describe a wide array of real-world phenomena, from the arc of a soccer ball to the trajectory of a rocket.</p>
@@ -225,6 +228,127 @@
 <li>Start from the fundamental laws of motion and gradually build the general solution.</li>
 <li>Use numerical methods or simulation tools to explore scenarios that go beyond simple analytical solutions.</li>
 <li>Consider how this model connects to real-world systems, such as sports, engineering, and astrophysics.</li>
+</ul>
+<hr/>
+<h1 id="answer">Answer</h1>
+<h2 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1">Investigating the Range as a Function of the Angle of Projection</h2>
+<h3 id="step-1-establish-the-theoretical-foundation"><strong>Step 1: Establish the Theoretical Foundation</strong></h3>
+<h4 id="1-understand-the-concept-of-projectile-motion"><strong>1. Understand the Concept of Projectile Motion</strong></h4>
+<ul>
+<li>A projectile follows a <strong>parabolic</strong> path due to the influence of gravity.</li>
+<li>It has two independent motions:</li>
+<li><strong>Horizontal motion:</strong> Constant velocity, since no acceleration (neglecting air resistance).</li>
+<li><strong>Vertical motion:</strong> Accelerated motion under gravity.</li>
+</ul>
+<h4 id="2-derive-the-equations-of-motion"><strong>2. Derive the Equations of Motion</strong></h4>
+<ul>
+<li>The horizontal and vertical displacement equations are:</li>
+</ul>
+<p>$$ x(t) = v_0 \cos\theta \cdot t $$
+  $$ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 $$</p>
+<h4 id="3-calculate-the-time-of-flight"><strong>3. Calculate the Time of Flight</strong></h4>
+<ul>
+<li>The projectile reaches the ground when $ y = 0 $, solving for time:</li>
+</ul>
+<p>$$ T = \frac{2 v_0 \sin\theta}{g} $$</p>
+<h4 id="4-derive-the-range-equation"><strong>4. Derive the Range Equation</strong></h4>
+<ul>
+<li>The range is the horizontal distance at $ T $:</li>
+</ul>
+<p>$$ R = v_0 \cos\theta \cdot T $$</p>
+<ul>
+<li>
+<p>Substituting $ T $:</p>
+<div class="arithmatex">\[ R = \frac{v_0^2}{g} \sin 2\theta \]</div>
+</li>
+</ul>
+<h4 id="5-find-the-optimal-angle-for-maximum-range"><strong>5. Find the Optimal Angle for Maximum Range</strong></h4>
+<ul>
+<li>The range depends on $ \sin 2\theta $, which is maximized when $ 2\theta = 90^\circ $, or $ \theta = 45^\circ $.</li>
+</ul>
+<hr/>
+<h3 id="step-2-analyze-how-range-changes-with-angle"><strong>Step 2: Analyze How Range Changes with Angle</strong></h3>
+<h4 id="1-varying-the-angle-from-0-to-90"><strong>1. Varying the Angle from 0° to 90°</strong></h4>
+<ul>
+<li>Compute $ R $ for multiple angles and observe how it changes.</li>
+</ul>
+<h4 id="2-effects-of-initial-velocity"><strong>2. Effects of Initial Velocity</strong></h4>
+<ul>
+<li>Increase or decrease $ v_0 $ and check how it impacts $ R $.</li>
+</ul>
+<h4 id="3-effects-of-gravity"><strong>3. Effects of Gravity</strong></h4>
+<ul>
+<li>Consider different values of $ g $ (e.g., Earth vs. Moon) and see how the range varies.</li>
+</ul>
+<h4 id="4-find-the-symmetry"><strong>4. Find the Symmetry</strong></h4>
+<ul>
+<li>The equation $ R = \frac{v_0^2}{g} \sin 2\theta $ is <strong>symmetric</strong>, meaning:</li>
+<li>$ \theta = 30^\circ $ and $ \theta = 60^\circ $ give the same range.</li>
+<li>$ \theta = 20^\circ $ and $ \theta = 70^\circ $ also give the same range.</li>
+</ul>
+<hr/>
+<h3 id="step-3-practical-applications"><strong>Step 3: Practical Applications</strong></h3>
+<h4 id="1-sports-applications"><strong>1. Sports Applications</strong></h4>
+<ul>
+<li>Optimizing kick angles in soccer, golf, or basketball for maximum range.</li>
+</ul>
+<h4 id="2-ballistics-military-applications"><strong>2. Ballistics &amp; Military Applications</strong></h4>
+<ul>
+<li>Determining the best firing angle for artillery.</li>
+</ul>
+<h4 id="3-rocket-science"><strong>3. Rocket Science</strong></h4>
+<ul>
+<li>Understanding launch angles for spacecraft trajectories.</li>
+</ul>
+<hr/>
+<h3 id="step-4-implementation-in-python"><strong>Step 4: Implementation in Python</strong></h3>
+<pre><code> import numpy as np
+ import matplotlib.pyplot as plt
+
+def projectile_range(v0, g=9.81):
+
+# Step 1: Define the range of angles
+angles = np.linspace(0, 90, 100)  # Angle from 0 to 90 degrees
+radians = np.radians(angles)  # Convert angles to radians
+
+# Step 2: Compute the projectile range for each angle
+ranges = (v0**2 / g) * np.sin(2 * radians)
+
+# Step 3: Plot the results
+plt.figure(figsize=(8,5))
+plt.plot(angles, ranges, label=f'Initial Velocity: {v0} m/s')
+
+# Step 4: Label axes and title
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (m)')
+plt.title('Projectile Range vs. Angle of Projection')
+
+# Step 5: Add legend and grid
+plt.legend()
+plt.grid()
+
+# Step 6: Display the plot
+plt.show()
+
+# Example usage
+projectile_range(v0=20)
+</code></pre>
+<hr/>
+<h3 id="step-5-discussion-limitations"><strong>Step 5: Discussion &amp; Limitations</strong></h3>
+<h4 id="1-what-does-the-graph-show"><strong>1. What does the graph show?</strong></h4>
+<ul>
+<li>A clear peak at $ \theta = 45^\circ $.</li>
+<li>Symmetry in range for complementary angles.</li>
+</ul>
+<h4 id="2-limitations-of-the-model"><strong>2. Limitations of the Model</strong></h4>
+<ul>
+<li>Ignores air resistance.</li>
+<li>Assumes flat ground and no wind.</li>
+</ul>
+<h4 id="3-how-to-improve-the-model"><strong>3. How to Improve the Model?</strong></h4>
+<ul>
+<li>Add drag force.</li>
+<li>Consider different launch heights.</li>
 </ul>
 </div>
 </div><footer>
