@@ -1,3 +1,10 @@
+---
+title: "Investigating the Range as a Function of the Angle of Projection"
+author: "Yahya Lendani"
+date: "2025-02-28"
+format: html
+---
+
 # Problem 1
 ## Investigating the Range as a Function of the Angle of Projection
 
@@ -51,43 +58,43 @@ What makes this topic particularly compelling is the number of free parameters i
 #### **2. Derive the Equations of Motion**
 - The horizontal and vertical displacement equations are:
 
-  $$ x(t) = v_0 \cos\theta \cdot t $$
-  $$ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 $$
+  $$x(t) = v_0 \cos\theta \cdot t$$
+  $$y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$$
 
 #### **3. Calculate the Time of Flight**
-- The projectile reaches the ground when $ y = 0 $, solving for time:
+- The projectile reaches the ground when $y = 0$, solving for time:
 
   $$ T = \frac{2 v_0 \sin\theta}{g} $$
 
 #### **4. Derive the Range Equation**
-- The range is the horizontal distance at $ T $:
+- The range is the horizontal distance at $T$:
 
   $$ R = v_0 \cos\theta \cdot T $$
 
-  - Substituting $ T $:
+  - Substituting $T$:
 
     $$ R = \frac{v_0^2}{g} \sin 2\theta $$
 
 #### **5. Find the Optimal Angle for Maximum Range**
-- The range depends on $ \sin 2\theta $, which is maximized when $ 2\theta = 90^\circ $, or $ \theta = 45^\circ $.
+- The range depends on $\sin 2\theta$, which is maximized when $2\theta = 90^\circ$, or $\theta = 45^\circ$.
 
 ---
 
 ### **Step 2: Analyze How Range Changes with Angle**
 
 #### **1. Varying the Angle from 0° to 90°**
-- Compute $ R $ for multiple angles and observe how it changes.
+- Compute $R$ for multiple angles and observe how it changes.
 
 #### **2. Effects of Initial Velocity**
-- Increase or decrease $ v_0 $ and check how it impacts $ R $.
+- Increase or decrease $v_0$ and check how it impacts $R$.
 
 #### **3. Effects of Gravity**
-- Consider different values of $ g $ (e.g., Earth vs. Moon) and see how the range varies.
+- Consider different values of $g$ (e.g., Earth vs. Moon) and see how the range varies.
 
 #### **4. Find the Symmetry**
-- The equation $ R = \frac{v_0^2}{g} \sin 2\theta $ is **symmetric**, meaning:
-  - $ \theta = 30^\circ $ and $ \theta = 60^\circ $ give the same range.
-  - $ \theta = 20^\circ $ and $ \theta = 70^\circ $ also give the same range.
+- The equation $R = \frac{v_0^2}{g} \sin 2\theta$ is **symmetric**, meaning:
+  - $\theta = 30^\circ$ and $\theta = 60^\circ$ give the same range.
+  - $\theta = 20^\circ$ and $\theta = 70^\circ$ also give the same range.
 
 ---
 
@@ -105,12 +112,11 @@ What makes this topic particularly compelling is the number of free parameters i
 ---
 
 ### **Step 4: Implementation in Python**
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
 
-     import numpy as np
-     import matplotlib.pyplot as plt
-
-    def projectile_range(v0, g=9.81):
-
+def projectile_range(v0, g=9.81):
     # Step 1: Define the range of angles
     angles = np.linspace(0, 90, 100)  # Angle from 0 to 90 degrees
     radians = np.radians(angles)  # Convert angles to radians
@@ -134,15 +140,16 @@ What makes this topic particularly compelling is the number of free parameters i
     # Step 6: Display the plot
     plt.show()
 
-    # Example usage
-    projectile_range(v0=20)
-
+# Example usage
+projectile_range(v0=20)
+```
+![img.png](img.png)
 ---
 
 ### **Step 5: Discussion & Limitations**
 
 #### **1. What does the graph show?**
-- A clear peak at $ \theta = 45^\circ $.
+- A clear peak at $\theta = 45^\circ$.
 - Symmetry in range for complementary angles.
 
 #### **2. Limitations of the Model**
