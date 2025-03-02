@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yahya Lendani">
+<meta name="dcterms.date" content="2025-02-28">
+
+<title>Investigating the Range as a Function of the Angle of Projection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Problem_1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Problem_1_files/libs/quarto-html/quarto.js"></script>
+<script src="Problem_1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Problem_1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Problem_1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Problem_1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Problem_1_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Problem_1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Problem_1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Problem_1_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Investigating the Range as a Function of the Angle of Projection</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yahya Lendani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 28, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="problem-1" class="level1">
+<h1>Problem 1</h1>
+<section id="investigating-the-range-as-a-function-of-the-angle-of-projection" class="level2">
+<h2 class="anchored" data-anchor-id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h2>
+</section>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Projectile motion, while seemingly simple, offers a rich playground for exploring fundamental principles of physics. The problem is straightforward: analyze how the range of a projectile depends on its angle of projection. Yet, beneath this simplicity lies a complex and versatile framework. The equations governing projectile motion involve both linear and quadratic relationships, making them accessible yet deeply insightful.</p>
+<p>What makes this topic particularly compelling is the number of free parameters involved in these equations, such as initial velocity, gravitational acceleration, and launch height. These parameters give rise to a diverse set of solutions that can describe a wide array of real-world phenomena, from the arc of a soccer ball to the trajectory of a rocket.</p>
+</section>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
+<section id="theoretical-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="theoretical-foundation">1. Theoretical Foundation</h3>
+<ul>
+<li>Begin by deriving the governing equations of motion from fundamental principles. This involves solving a basic differential equation to establish the general form of the motion.</li>
+<li>Highlight how variations in initial conditions lead to a family of solutions.</li>
+</ul>
+</section>
+<section id="analysis-of-the-range" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-of-the-range">2. Analysis of the Range</h3>
+<ul>
+<li>Investigate how the horizontal range depends on the angle of projection.</li>
+<li>Discuss how changes in other parameters, such as initial velocity and gravitational acceleration, influence the relationship.</li>
+</ul>
+</section>
+<section id="practical-applications" class="level3">
+<h3 class="anchored" data-anchor-id="practical-applications">3. Practical Applications</h3>
+<ul>
+<li>Reflect on how this model can be adapted to describe various real-world situations, such as projectiles launched on uneven terrain or in the presence of air resistance.</li>
+</ul>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">4. Implementation</h3>
+<ul>
+<li>Develop a computational tool or algorithm to simulate projectile motion.</li>
+<li>Visualize the range as a function of the angle of projection for different sets of initial conditions.</li>
+</ul>
+</section>
+</section>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<ul>
+<li>A Markdown document with Python script or notebook implementing the simulations.</li>
+<li>A detailed description of the family of solutions derived from the governing equations.</li>
+<li>Graphical representations of the range versus angle of projection, highlighting how different parameters influence the curve.</li>
+<li>A discussion on the limitations of the idealized model and suggestions for incorporating more realistic factors, such as drag or wind.</li>
+</ul>
+</section>
+<section id="hints-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="hints-and-resources">Hints and Resources</h2>
+<ul>
+<li>Start from the fundamental laws of motion and gradually build the general solution.</li>
+<li>Use numerical methods or simulation tools to explore scenarios that go beyond simple analytical solutions.</li>
+<li>Consider how this model connects to real-world systems, such as sports, engineering, and astrophysics.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="answer" class="level1">
+<h1>Answer</h1>
+<section id="investigating-the-range-as-a-function-of-the-angle-of-projection-1" class="level2">
+<h2 class="anchored" data-anchor-id="investigating-the-range-as-a-function-of-the-angle-of-projection-1">Investigating the Range as a Function of the Angle of Projection</h2>
+<section id="step-1-establish-the-theoretical-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-establish-the-theoretical-foundation"><strong>Step 1: Establish the Theoretical Foundation</strong></h3>
+<section id="understand-the-concept-of-projectile-motion" class="level4">
+<h4 class="anchored" data-anchor-id="understand-the-concept-of-projectile-motion"><strong>1. Understand the Concept of Projectile Motion</strong></h4>
+<ul>
+<li>A projectile follows a <strong>parabolic</strong> path due to the influence of gravity.</li>
+<li>It has two independent motions:
+<ul>
+<li><strong>Horizontal motion:</strong> Constant velocity, since no acceleration (neglecting air resistance).</li>
+<li><strong>Vertical motion:</strong> Accelerated motion under gravity.</li>
+</ul></li>
+</ul>
+</section>
+<section id="derive-the-equations-of-motion" class="level4">
+<h4 class="anchored" data-anchor-id="derive-the-equations-of-motion"><strong>2. Derive the Equations of Motion</strong></h4>
+<ul>
+<li><p>The horizontal and vertical displacement equations are:</p>
+<p><span class="math display">\[x(t) = v_0 \cos\theta \cdot t\]</span> <span class="math display">\[y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2\]</span></p></li>
+</ul>
+</section>
+<section id="calculate-the-time-of-flight" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-the-time-of-flight"><strong>3. Calculate the Time of Flight</strong></h4>
+<ul>
+<li><p>The projectile reaches the ground when <span class="math inline">\(y = 0\)</span>, solving for time:</p>
+<p><span class="math display">\[ T = \frac{2 v_0 \sin\theta}{g} \]</span></p></li>
+</ul>
+</section>
+<section id="derive-the-range-equation" class="level4">
+<h4 class="anchored" data-anchor-id="derive-the-range-equation"><strong>4. Derive the Range Equation</strong></h4>
+<ul>
+<li><p>The range is the horizontal distance at <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[ R = v_0 \cos\theta \cdot T \]</span></p>
+<ul>
+<li><p>Substituting <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[ R = \frac{v_0^2}{g} \sin 2\theta \]</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="find-the-optimal-angle-for-maximum-range" class="level4">
+<h4 class="anchored" data-anchor-id="find-the-optimal-angle-for-maximum-range"><strong>5. Find the Optimal Angle for Maximum Range</strong></h4>
+<ul>
+<li>The range depends on <span class="math inline">\(\sin 2\theta\)</span>, which is maximized when <span class="math inline">\(2\theta = 90^\circ\)</span>, or <span class="math inline">\(\theta = 45^\circ\)</span>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="step-2-analyze-how-range-changes-with-angle" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-analyze-how-range-changes-with-angle"><strong>Step 2: Analyze How Range Changes with Angle</strong></h3>
+<section id="varying-the-angle-from-0-to-90" class="level4">
+<h4 class="anchored" data-anchor-id="varying-the-angle-from-0-to-90"><strong>1. Varying the Angle from 0° to 90°</strong></h4>
+<ul>
+<li>Compute <span class="math inline">\(R\)</span> for multiple angles and observe how it changes.</li>
+</ul>
+</section>
+<section id="effects-of-initial-velocity" class="level4">
+<h4 class="anchored" data-anchor-id="effects-of-initial-velocity"><strong>2. Effects of Initial Velocity</strong></h4>
+<ul>
+<li>Increase or decrease <span class="math inline">\(v_0\)</span> and check how it impacts <span class="math inline">\(R\)</span>.</li>
+</ul>
+</section>
+<section id="effects-of-gravity" class="level4">
+<h4 class="anchored" data-anchor-id="effects-of-gravity"><strong>3. Effects of Gravity</strong></h4>
+<ul>
+<li>Consider different values of <span class="math inline">\(g\)</span> (e.g., Earth vs.&nbsp;Moon) and see how the range varies.</li>
+</ul>
+</section>
+<section id="find-the-symmetry" class="level4">
+<h4 class="anchored" data-anchor-id="find-the-symmetry"><strong>4. Find the Symmetry</strong></h4>
+<ul>
+<li>The equation <span class="math inline">\(R = \frac{v_0^2}{g} \sin 2\theta\)</span> is <strong>symmetric</strong>, meaning:
+<ul>
+<li><span class="math inline">\(\theta = 30^\circ\)</span> and <span class="math inline">\(\theta = 60^\circ\)</span> give the same range.</li>
+<li><span class="math inline">\(\theta = 20^\circ\)</span> and <span class="math inline">\(\theta = 70^\circ\)</span> also give the same range.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="step-3-practical-applications" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-practical-applications"><strong>Step 3: Practical Applications</strong></h3>
+<section id="sports-applications" class="level4">
+<h4 class="anchored" data-anchor-id="sports-applications"><strong>1. Sports Applications</strong></h4>
+<ul>
+<li>Optimizing kick angles in soccer, golf, or basketball for maximum range.</li>
+</ul>
+</section>
+<section id="ballistics-military-applications" class="level4">
+<h4 class="anchored" data-anchor-id="ballistics-military-applications"><strong>2. Ballistics &amp; Military Applications</strong></h4>
+<ul>
+<li>Determining the best firing angle for artillery.</li>
+</ul>
+</section>
+<section id="rocket-science" class="level4">
+<h4 class="anchored" data-anchor-id="rocket-science"><strong>3. Rocket Science</strong></h4>
+<ul>
+<li>Understanding launch angles for spacecraft trajectories.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="step-4-implementation-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-implementation-in-python"><strong>Step 4: Implementation in Python</strong></h3>
+<div id="2680cefc" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> projectile_range(v0, g<span class="op">=</span><span class="fl">9.81</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 1: Define the range of angles</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    angles <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">100</span>)  <span class="co"># Angle from 0 to 90 degrees</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    radians <span class="op">=</span> np.radians(angles)  <span class="co"># Convert angles to radians</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 2: Compute the projectile range for each angle</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    ranges <span class="op">=</span> (v0<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> g) <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> radians)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 3: Plot the results</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    plt.plot(angles, ranges, label<span class="op">=</span><span class="ss">f'Initial Velocity: </span><span class="sc">{</span>v0<span class="sc">}</span><span class="ss"> m/s'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 4: Label axes and title</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'Angle of Projection (degrees)'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'Range (m)'</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">'Projectile Range vs. Angle of Projection'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 5: Add legend and grid</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 6: Display the plot</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>projectile_range(v0<span class="op">=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Problem_1_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img.png" class="img-fluid figure-img"></p>
+<figcaption>img.png</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="step-5-discussion-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-discussion-limitations"><strong>Step 5: Discussion &amp; Limitations</strong></h3>
+<section id="what-does-the-graph-show" class="level4">
+<h4 class="anchored" data-anchor-id="what-does-the-graph-show"><strong>1. What does the graph show?</strong></h4>
+<ul>
+<li>A clear peak at <span class="math inline">\(\theta = 45^\circ\)</span>.</li>
+<li>Symmetry in range for complementary angles.</li>
+</ul>
+</section>
+<section id="limitations-of-the-model" class="level4">
+<h4 class="anchored" data-anchor-id="limitations-of-the-model"><strong>2. Limitations of the Model</strong></h4>
+<ul>
+<li>Ignores air resistance.</li>
+<li>Assumes flat ground and no wind.</li>
+</ul>
+</section>
+<section id="how-to-improve-the-model" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-improve-the-model"><strong>3. How to Improve the Model?</strong></h4>
+<ul>
+<li>Add drag force.</li>
+<li>Consider different launch heights.</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
