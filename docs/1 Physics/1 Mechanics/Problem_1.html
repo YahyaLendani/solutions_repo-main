@@ -139,110 +139,128 @@ window.Quarto = {
 </header>
 
 
-<section id="problem-1" class="level1">
-<h1>Problem 1</h1>
 <section id="investigating-the-range-as-a-function-of-the-angle-of-projection" class="level2">
 <h2 class="anchored" data-anchor-id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h2>
+<section id="step-1-establish-the-theoretical-foundation" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-establish-the-theoretical-foundation"><strong>Step 1: Establish the Theoretical Foundation</strong></h3>
 </section>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Projectile motion, while seemingly simple, offers a rich playground for exploring fundamental principles of physics. The problem is straightforward: analyze how the range of a projectile depends on its angle of projection. Yet, beneath this simplicity lies a complex and versatile framework. The equations governing projectile motion involve both linear and quadratic relationships, making them accessible yet deeply insightful.</p>
-<p>What makes this topic particularly compelling is the number of free parameters involved in these equations, such as initial velocity, gravitational acceleration, and launch height. These parameters give rise to a diverse set of solutions that can describe a wide array of real-world phenomena, from the arc of a soccer ball to the trajectory of a rocket.</p>
 </section>
-<section id="task" class="level2">
-<h2 class="anchored" data-anchor-id="task">Task</h2>
-<section id="theoretical-foundation" class="level3">
-<h3 class="anchored" data-anchor-id="theoretical-foundation">1. Theoretical Foundation</h3>
+<section id="projectile-motion-with-air-resistance" class="level1">
+<h1><strong>Projectile Motion with Air Resistance</strong></h1>
+<section id="equations-of-motion" class="level2">
+<h2 class="anchored" data-anchor-id="equations-of-motion"><strong>1. Equations of Motion</strong></h2>
 <ul>
-<li>Begin by deriving the governing equations of motion from fundamental principles. This involves solving a basic differential equation to establish the general form of the motion.</li>
-<li>Highlight how variations in initial conditions lead to a family of solutions.</li>
+<li>The equations governing projectile motion with air resistance are derived from Newton’s second law. We consider a projectile of mass <span class="math inline">\(m\)</span> moving under the influence of gravity and an opposing air resistance force proportional to velocity.</li>
 </ul>
-</section>
-<section id="analysis-of-the-range" class="level3">
-<h3 class="anchored" data-anchor-id="analysis-of-the-range">2. Analysis of the Range</h3>
+<p>The equations of motion are given by:</p>
+<p><span class="math display">\[
+m \cdot x'' = -b \cdot x'
+\]</span></p>
+<p><span class="math display">\[
+m \cdot y'' = -mg - b \cdot y'
+\]</span></p>
+<section id="where" class="level3">
+<h3 class="anchored" data-anchor-id="where"><strong>Where:</strong></h3>
 <ul>
-<li>Investigate how the horizontal range depends on the angle of projection.</li>
-<li>Discuss how changes in other parameters, such as initial velocity and gravitational acceleration, influence the relationship.</li>
-</ul>
-</section>
-<section id="practical-applications" class="level3">
-<h3 class="anchored" data-anchor-id="practical-applications">3. Practical Applications</h3>
-<ul>
-<li>Reflect on how this model can be adapted to describe various real-world situations, such as projectiles launched on uneven terrain or in the presence of air resistance.</li>
-</ul>
-</section>
-<section id="implementation" class="level3">
-<h3 class="anchored" data-anchor-id="implementation">4. Implementation</h3>
-<ul>
-<li>Develop a computational tool or algorithm to simulate projectile motion.</li>
-<li>Visualize the range as a function of the angle of projection for different sets of initial conditions.</li>
-</ul>
-</section>
-</section>
-<section id="deliverables" class="level2">
-<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
-<ul>
-<li>A Markdown document with Python script or notebook implementing the simulations.</li>
-<li>A detailed description of the family of solutions derived from the governing equations.</li>
-<li>Graphical representations of the range versus angle of projection, highlighting how different parameters influence the curve.</li>
-<li>A discussion on the limitations of the idealized model and suggestions for incorporating more realistic factors, such as drag or wind.</li>
-</ul>
-</section>
-<section id="hints-and-resources" class="level2">
-<h2 class="anchored" data-anchor-id="hints-and-resources">Hints and Resources</h2>
-<ul>
-<li>Start from the fundamental laws of motion and gradually build the general solution.</li>
-<li>Use numerical methods or simulation tools to explore scenarios that go beyond simple analytical solutions.</li>
-<li>Consider how this model connects to real-world systems, such as sports, engineering, and astrophysics.</li>
+<li><span class="math inline">\(m\)</span> = mass of the projectile (kg)<br>
+</li>
+<li><span class="math inline">\(g\)</span> = gravitational acceleration (9.81 m/s²)<br>
+</li>
+<li><span class="math inline">\(b\)</span> = air resistance coefficient (kg/s)<br>
+</li>
+<li><span class="math inline">\(x', y'\)</span> = velocity components</li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="answer" class="level1">
-<h1>Answer</h1>
-<section id="investigating-the-range-as-a-function-of-the-angle-of-projection-1" class="level2">
-<h2 class="anchored" data-anchor-id="investigating-the-range-as-a-function-of-the-angle-of-projection-1">Investigating the Range as a Function of the Angle of Projection</h2>
-<section id="step-1-establish-the-theoretical-foundation" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-establish-the-theoretical-foundation"><strong>Step 1: Establish the Theoretical Foundation</strong></h3>
-<section id="understand-the-concept-of-projectile-motion" class="level4">
-<h4 class="anchored" data-anchor-id="understand-the-concept-of-projectile-motion"><strong>1. Understand the Concept of Projectile Motion</strong></h4>
-<ul>
-<li>A projectile follows a <strong>parabolic</strong> path due to the influence of gravity and air resistace.</li>
-<li>We consider both horizontal <span class="math inline">\(x\)</span> and vertical <span class="math inline">\(y\)</span> motion with an air resistance force proportional to velocity.</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="equations-of-motion" class="level2">
-<h2 class="anchored" data-anchor-id="equations-of-motion">Equations of Motion</h2>
-<p>The governing equations for the projectile motion with air resistance are:</p>
-<p><span class="math display">\[m \cdot x'' = - b \cdot x'\]</span> <span class="math display">\[m \cdot y'' = - mg - b \cdot y'\]</span></p>
-<p>where: - <span class="math inline">\(m\)</span> = mass of the projectile (kg) - <span class="math inline">\(g\)</span> = gravitational acceleration (9.81 m/s²) - <span class="math inline">\(b\)</span> = air resistance coefficient (kg/s) - <span class="math inline">\(x'\)</span>, <span class="math inline">\(y'\)</span> = velocity components</p>
-</section>
 <section id="initial-conditions" class="level2">
-<h2 class="anchored" data-anchor-id="initial-conditions">Initial Conditions</h2>
-<p>We define the initial conditions as: - <span class="math inline">\(x_0 = 0\)</span>, <span class="math inline">\(y_0 = 0\)</span> (starting position) - <span class="math inline">\(v_{x0} = 10\)</span>, <span class="math inline">\(v_{y0} = 10\)</span> (initial velocity components in m/s)</p>
-<section id="derive-the-equations-of-motion" class="level4">
-<h4 class="anchored" data-anchor-id="derive-the-equations-of-motion"><strong>2. Derive the Equations of Motion</strong></h4>
-<ul>
-<li><p>The horizontal and vertical displacement equations are:</p>
-<p><span class="math display">\[ x(t) = v_0 \cos\theta \cdot t \]</span> <span class="math display">\[ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 \]</span></p></li>
-</ul>
+<h2 class="anchored" data-anchor-id="initial-conditions"><strong>2. Initial Conditions</strong></h2>
+<p>The initial conditions define the starting point and initial velocity components of the projectile.</p>
+<p><span class="math display">\[
+x_0 = 0, \quad y_0 = 0
+\]</span></p>
+<p>(Starting position at the origin)</p>
+<p><span class="math display">\[
+v_{x0} = 10, \quad v_{y0} = 10
+\]</span></p>
+<p>(Initial velocity components in m/s)</p>
+<hr>
 </section>
-<section id="calculate-the-time-of-flight" class="level4">
-<h4 class="anchored" data-anchor-id="calculate-the-time-of-flight"><strong>3. Calculate the Time of Flight</strong></h4>
-<ul>
-<li><p>The projectile reaches the ground when <span class="math inline">\(y = 0\)</span>, solving for time:</p>
-<p><span class="math display">\[ T = \frac{2 v_0 \sin\theta}{g} \]</span></p></li>
-</ul>
+<section id="deriving-the-equations-of-motion" class="level2">
+<h2 class="anchored" data-anchor-id="deriving-the-equations-of-motion"><strong>3. Deriving the Equations of Motion</strong></h2>
+<section id="step-1-solve-for-horizontal-motion" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-solve-for-horizontal-motion"><strong>Step 1: Solve for Horizontal Motion</strong></h3>
+<p>From the equation:</p>
+<p><span class="math display">\[
+m \cdot x'' = -b \cdot x'
+\]</span></p>
+<p>Rewriting:</p>
+<p><span class="math display">\[
+x'' + \frac{b}{m} x' = 0
+\]</span></p>
+<p>This is a first-order linear differential equation in <span class="math inline">\(x'\)</span>. The general solution for velocity is:</p>
+<p><span class="math display">\[
+x'(t) = v_{x0} e^{-\frac{b}{m} t}
+\]</span></p>
+<p>To find the horizontal displacement, integrate:</p>
+<p><span class="math display">\[
+x(t) = \frac{m}{b} v_{x0} \left( 1 - e^{-\frac{b}{m} t} \right)
+\]</span></p>
+<hr>
 </section>
+<section id="step-2-solve-for-vertical-motion" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-solve-for-vertical-motion"><strong>Step 2: Solve for Vertical Motion</strong></h3>
+<p>From the vertical motion equation:</p>
+<p><span class="math display">\[
+m \cdot y'' = -mg - b \cdot y'
+\]</span></p>
+<p>Rewriting:</p>
+<p><span class="math display">\[
+y'' + \frac{b}{m} y' + g = 0
+\]</span></p>
+<p>Solving for <span class="math inline">\(y'\)</span>:</p>
+<p><span class="math display">\[
+y'(t) = \left( v_{y0} + \frac{mg}{b} \right) e^{-\frac{b}{m} t} - \frac{mg}{b}
+\]</span></p>
+<p>Integrating to get <span class="math inline">\(y(t)\)</span>:</p>
+<p><span class="math display">\[
+y(t) = \frac{m}{b} \left( v_{y0} + \frac{mg}{b} \right) \left( 1 - e^{-\frac{b}{m} t} \right) - \frac{mg}{b} t
+\]</span></p>
+<p>For small air resistance (<span class="math inline">\(b \approx 0\)</span>), this simplifies to:</p>
+<p><span class="math display">\[
+y(t) = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="calculate-the-time-of-flight" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-the-time-of-flight"><strong>4. Calculate the Time of Flight</strong></h2>
+<p>The projectile reaches the ground when <span class="math inline">\(y = 0\)</span>. Using the simplified equation:</p>
+<p><span class="math display">\[
+y(t) = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</span></p>
+<p>Setting <span class="math inline">\(y = 0\)</span> and solving for <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t \left( v_0 \sin \theta - \frac{1}{2} g t \right) = 0
+\]</span></p>
+<p>This gives two solutions:</p>
+<p><span class="math display">\[
+t = 0 \quad \text{(initial time)}
+\]</span></p>
+<p><span class="math display">\[
+t = \frac{2 v_0 \sin \theta}{g}
+\]</span></p>
+<p>Thus, the total time of flight is:</p>
+<p><span class="math display">\[
+T = \frac{2 v_0 \sin \theta}{g}
+\]</span></p>
 <section id="derive-the-range-equation" class="level4">
 <h4 class="anchored" data-anchor-id="derive-the-range-equation"><strong>4. Derive the Range Equation</strong></h4>
 <ul>
-<li><p>The range is the horizontal distance at <span class="math inline">\(T\)</span>:</p>
+<li><p>The range is the horizontal distance at $ T $:</p>
 <p><span class="math display">\[ R = v_0 \cos\theta \cdot T \]</span></p>
 <ul>
-<li><p>Substituting <span class="math inline">\(T\)</span>:</p>
+<li><p>Substituting $ T $:</p>
 <p><span class="math display">\[ R = \frac{v_0^2}{g} \sin 2\theta \]</span></p></li>
 </ul></li>
 </ul>
@@ -250,28 +268,28 @@ window.Quarto = {
 <section id="find-the-optimal-angle-for-maximum-range" class="level4">
 <h4 class="anchored" data-anchor-id="find-the-optimal-angle-for-maximum-range"><strong>5. Find the Optimal Angle for Maximum Range</strong></h4>
 <ul>
-<li>The range depends on <span class="math inline">\(\sin 2\theta\)</span>, which is maximized when <span class="math inline">\(2\theta = 90^\circ\)</span>, or <span class="math inline">\(\theta = 45^\circ\)</span>.</li>
+<li>The range depends on $ $, which is maximized when $ 2= 90^$, or $ = 45^$.</li>
 </ul>
 <hr>
 </section>
-<section id="step-2-analyze-how-range-changes-with-angle" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-analyze-how-range-changes-with-angle"><strong>Step 2: Analyze How Range Changes with Angle</strong></h3>
+<section id="step-3-analyze-how-range-changes-with-angle" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-analyze-how-range-changes-with-angle"><strong>Step 3: Analyze How Range Changes with Angle</strong></h3>
 <section id="varying-the-angle-from-0-to-90" class="level4">
 <h4 class="anchored" data-anchor-id="varying-the-angle-from-0-to-90"><strong>1. Varying the Angle from 0° to 90°</strong></h4>
 <ul>
-<li>Compute <span class="math inline">\(R\)</span> for multiple angles and observe how it changes.</li>
+<li>Compute $ R $ for multiple angles and observe how it changes.</li>
 </ul>
 </section>
 <section id="effects-of-initial-velocity" class="level4">
 <h4 class="anchored" data-anchor-id="effects-of-initial-velocity"><strong>2. Effects of Initial Velocity</strong></h4>
 <ul>
-<li>Increase or decrease <span class="math inline">\(v_0\)</span> and check how it impacts <span class="math inline">\(R\)</span>.</li>
+<li>Increase or decrease $ v_0 $ and check how it impacts $ R $.</li>
 </ul>
 </section>
 <section id="effects-of-gravity" class="level4">
 <h4 class="anchored" data-anchor-id="effects-of-gravity"><strong>3. Effects of Gravity</strong></h4>
 <ul>
-<li>Consider different values of <span class="math inline">\(g\)</span> (e.g., Earth vs.&nbsp;Moon) and see how the range varies.</li>
+<li>Consider different values of $ g $ (e.g., Earth vs.&nbsp;Moon) and see how the range varies.</li>
 </ul>
 </section>
 <section id="find-the-symmetry" class="level4">
@@ -279,15 +297,15 @@ window.Quarto = {
 <ul>
 <li>The equation $ R = $ is <strong>symmetric</strong>, meaning:
 <ul>
-<li><span class="math inline">\(\theta = 30^\circ\)</span> and <span class="math inline">\(\theta = 60^\circ\)</span> give the same range.</li>
-<li><span class="math inline">\(\theta = 20^\circ\)</span> and <span class="math inline">\(\theta = 70^\circ\)</span> also give the same range.</li>
+<li>$ = 30^$ and $ = 60^$ give the same range.</li>
+<li>$ = 20^$ and $ = 70^$ also give the same range.</li>
 </ul></li>
 </ul>
 <hr>
 </section>
 </section>
-<section id="step-3-practical-applications" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-practical-applications"><strong>Step 3: Practical Applications</strong></h3>
+<section id="step-4-practical-applications" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-practical-applications"><strong>Step 4: Practical Applications</strong></h3>
 <section id="sports-applications" class="level4">
 <h4 class="anchored" data-anchor-id="sports-applications"><strong>1. Sports Applications</strong></h4>
 <ul>
@@ -308,9 +326,9 @@ window.Quarto = {
 <hr>
 </section>
 </section>
-<section id="step-4-implementation-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-implementation-in-python"><strong>Step 4: Implementation in Python</strong></h3>
-<div id="10947092" class="cell" data-execution_count="1">
+<section id="step-5-implementation-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-implementation-in-python"><strong>Step 5: Implementation in Python</strong></h3>
+<div id="f145d0c6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
