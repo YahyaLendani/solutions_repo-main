@@ -1,7 +1,5 @@
+# Problem 1
 ## Investigating the Range as a Function of the Angle of Projection
-
-## **Step 1: Establish the Theoretical Foundation**
-# **Projectile Motion with Air Resistance**  
 
 ## **1. Equations of Motion**  
 - The equations governing projectile motion with air resistance are derived from Newton’s second law. We consider a projectile of mass $m$ moving under the influence of gravity and an opposing air resistance force proportional to velocity.  
@@ -70,7 +68,7 @@ $$
 
 ---
 
-### **Step 2: Solve for Vertical Motion**  
+## **Step 2: Solve for Vertical Motion**  
 From the vertical motion equation:
 
 $$
@@ -103,7 +101,7 @@ $$
 
 ---
 
-## **4. Calculate the Time of Flight**  
+## **Calculate the Time of Flight**  
 The projectile reaches the ground when $y = 0$. Using the simplified equation:
 
 $$
@@ -133,7 +131,7 @@ T = \frac{2 v_0 \sin \theta}{g}
 $$
 
 
-#### **4. Derive the Range Equation**
+###  **Derive the Range Equation**
 - The range is the horizontal distance at $T$:
 
   $$ R = v_0 \cos\theta \cdot T$$
@@ -150,42 +148,42 @@ $$
   R = \frac{v_0^2 \sin 2\theta}{g}
   $$
 
-#### **5. Find the Optimal Angle for Maximum Range**
+###  **Find the Optimal Angle for Maximum Range**
 - The range depends on $\sin 2\theta$, which is maximized when $2\theta = 90^\circ$, or $\theta = 45^\circ$.
 - Thus, the optimal angle for maximum range is $45^\circ$.
 
-### **Step 3: Analyze How Range Changes with Angle**
+## **Step 3: Analyze How Range Changes with Angle**
 
-#### **1. Varying the Angle from 0° to 90°**
+### **1. Varying the Angle from 0° to 90°**
 - Compute $R$ for multiple angles and observe how it changes.
 
-#### **2. Effects of Initial Velocity**
+### **2. Effects of Initial Velocity**
 - Increase or decrease $v_0$ and check how it impacts $ R $.
 
-#### **3. Effects of Gravity**
+### **3. Effects of Gravity**
 - Consider different values of $g$ (e.g., Earth vs. Moon) and see how the range varies.
 
-#### **4. Find the Symmetry**
+### **4. Find the Symmetry**
 - The equation $R = \frac{v_0^2}{g} \sin 2\theta$ is **symmetric**, meaning:
   - $\theta = 30^\circ $ and $ \theta = 60^\circ$ give the same range.
   - $\theta = 20^\circ $ and $ \theta = 70^\circ$ also give the same range.
 
 ---
 
-### **Step 4: Practical Applications**
+## **Step 4: Practical Applications**
 
-#### **1. Sports Applications**
+### **1. Sports Applications**
 - Optimizing kick angles in soccer, golf, or basketball for maximum range.
 
-#### **2. Ballistics & Military Applications**
+### **2. Ballistics & Military Applications**
 - Determining the best firing angle for artillery.
 
-#### **3. Rocket Science**
+### **3. Rocket Science**
 - Understanding launch angles for spacecraft trajectories.
 
 ---
 
-### **Step 5: Implementation in Python**
+## **Step 5: Implementation in Python**
 
 ```python
 import numpy as np
@@ -232,15 +230,15 @@ plt.show()
 ```
 ---
 
-### **Step 6: Discussion & Limitations**
+## **Step 6: Discussion & Limitations**
 
-#### **1. What does the graph show?**
+### **1. What does the graph show?**
 - A clear peak at $ \theta = 45^\circ $.
 - Symmetry in range for complementary angles.
 
-#### **2. Limitations of the Model**
+### **2. Limitations of the Model**
 - Assumes flat ground .
 
-#### **3. How to Improve the Model?**
+### **3. How to Improve the Model?**
 - Add drag force.
 - Consider different launch heights.
