@@ -23,23 +23,23 @@ nav:
   - Home: index.md
   - Physics:
       - Mechanics:
-          - Problem 1: "1 Physics/1 Mechanics/Problem_1.md"
-          - Problem 2: "1 Physics/1 Mechanics/Problem_2.md"
+          - Problem 1: "1_Physics/1_Mechanics/Problem_1.md"
+          - Problem 2: "1_Physics/1_Mechanics/Problem_2.md"
       - Gravity:
-          - Problem 1: "1 Physics/2 Gravity/Problem_1.md"
-          - Problem 2: "1 Physics/2 Gravity/Problem_2.md"
-          - Problem 3: "1 Physics/2 Gravity/Problem_3.md"
+          - Problem 1: "1_Physics/2_Gravity/Problem_1.md"
+          - Problem 2: "1_Physics/2_Gravity/Problem_2.md"
+          - Problem 3: "1_Physics/2_Gravity/Problem_3.md"
       - Waves:
-          - Problem 1: "1 Physics/3 Waves/Problem_1.md"
+          - Problem 1: "1_Physics/3_Waves/Problem_1.md"
       - Circuits:
-          - Problem 1: "1 Physics/4 Circuits/Problem_1.md"
+          - Problem 1: "1_Physics/4_Circuits/Problem_1.md"
       - Electromagnetism:
-          - Problem 1: "1 Physics/5 Electromagnetism/Problem_1.md"
+          - Problem 1: "1_Physics/5_Electromagnetism/Problem_1.md"
       - Statistics:
-          - Problem 1: "1 Physics/6 Statistics/Problem_1.md"
-          - Problem 2: "1 Physics/6 Statistics/Problem_2.md"
-      - Mesurements:
-          - Problem 1: "1 Physics/7 Mesurements/Problem_1.md"
+          - Problem 1: "1_Physics/6_Statistics/Problem_1.md"
+          - Problem 2: "1_Physics/6_Statistics/Problem_2.md"
+      - Measurements:
+          - Problem 1: "1_Physics/7_Measurements/Problem_1.md"
 
 
     
