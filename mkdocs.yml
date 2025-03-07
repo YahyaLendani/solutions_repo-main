@@ -23,6 +23,6 @@ nav:
   - Home: index.md
   - Physics:
     - Mechanics:
-        - Problem_1: docs\1 Physics\1 Mechanics\Problem_1.html
-        - lol: 1 Physics\1 Mechanics\problem_1.md
+        - Problem_1: 1 Physics/1 Mechanics/problem_1.html
+        - Problem_2: 1 Physics/1 Mechanics/problem_2.html
     
