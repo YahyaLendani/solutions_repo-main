@@ -100,6 +100,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="fullcontent">
@@ -253,7 +254,7 @@ window.Quarto = {
 </section>
 <section id="implementation-in-python" class="level2">
 <h2 class="anchored" data-anchor-id="implementation-in-python"><strong>Implementation in Python</strong></h2>
-<div id="b9b0ceb3" class="cell" data-execution_count="1">
+<div id="b294d5a1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
@@ -441,6 +442,161 @@ window.Quarto = {
 <li>Tools like <strong>Poincaré sections and bifurcation diagrams</strong> help classify its dynamical regimes.</li>
 </ul>
 <hr>
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #2c3e50;
+  font-family: 'Merriweather', serif;
+  text-transform: uppercase;
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.quarto-title-block.default .quarto-title {
+  margin-bottom: 30px; 
+}
+
+h2 {
+  color: #2c3e50;
+  font-family: 'Merriweather', serif;
+  background: #ecf0f1;
+  border-left: 4px solid #3498db;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+h3 {
+  color: #2c3e50;
+  font-family: 'Merriweather', serif;
+  font-size: 1.3em;
+  background: #ecf0f195;
+  border-left: 2px solid #3498db;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #2980b9;
+  color: #ffffff;
+}
+
+ol, ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+  border-left: 4px solid #3498db;
+  padding-left: 15px;
+  color: #555;
+  font-style: italic;
+  background: #ecf0f1;
+  margin-bottom: 20px;
+}
+
+.toc {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.toc a {
+  color: #3498db;
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.toc a:hover {
+  background: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.equation-box {
+  background-color: rgba(169, 17, 9, 0.01);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 7px;
+  margin: 15px 0;
+  text-align: center;
+  border-left: 2px solid rgb(169, 17, 9);
+}
+
+.geogebra-instruction {
+  border-left: 2px solid rgb(255, 140, 0);
+  background-color: rgba(255, 140, 0, 0.01);
+  padding: 5px 7px;
+  margin: 15px 0;
+  border-radius: 5px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.geogebra-instruction > *:last-child {
+  margin-bottom: 0;
+}
+</style>
 </section>
 </section>
 
