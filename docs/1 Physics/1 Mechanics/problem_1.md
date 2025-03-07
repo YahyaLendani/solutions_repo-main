@@ -165,8 +165,8 @@ $$
 
 ### **4. Find the Symmetry**
 - The equation $R = \frac{v_0^2}{g} \sin 2\theta$ is **symmetric**, meaning:
-  - $\theta = 30^\circ $ and $ \theta = 60^\circ$ give the same range.
-  - $\theta = 20^\circ $ and $ \theta = 70^\circ$ also give the same range.
+  - $\theta = 30^\circ$ and $\theta = 60^\circ$ give the same range.
+  - $\theta = 20^\circ$ and $\theta = 70^\circ$ also give the same range.
 
 ---
 
@@ -228,12 +228,13 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
+![alt text](image-7.png)
 ---
 
 ## **Step 6: Discussion & Limitations**
 
 ### **1. What does the graph show?**
-- A clear peak at $ \theta = 45^\circ $.
+- A clear peak at $\theta = 45^\circ$.
 - Symmetry in range for complementary angles.
 
 ### **2. Limitations of the Model**
