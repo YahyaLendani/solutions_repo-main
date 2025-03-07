@@ -203,6 +203,10 @@ plt.title('Bifurcation Diagram')
 plt.grid()
 plt.show()
 ```
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
 ## **6. Visualizing Results**
 After solving for $\theta(t)$, we analyze its behavior using different graphical representations:
 
