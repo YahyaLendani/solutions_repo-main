@@ -52,17 +52,51 @@
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation:</a>
+<li class="toctree-l3"><a class="reference internal" href="#1-understanding-the-physical-system">1. Understanding the Physical System</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-concepts">Key Concepts</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#task">Task:</a>
+</ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation:</a>
+<li class="toctree-l3"><a class="reference internal" href="#2-transforming-the-equation-for-numerical-methods">2. Transforming the Equation for Numerical Methods</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-state-variables">Defining State Variables</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-analysis-of-dynamics">2. Analysis of Dynamics:</a>
+</ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-practical-applications">3. Practical Applications:</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-choosing-a-numerical-solver">3. Choosing a Numerical Solver</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation:</a>
+<li class="toctree-l3"><a class="reference internal" href="#4-setting-up-initial-conditions">4. Setting Up Initial Conditions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-running-the-simulation">5. Running the Simulation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#implementation-in-python">Implementation in Python</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-visualizing-results">6. Visualizing Results</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-time-series-plot">(a) Time Series Plot</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-phase-portrait">(b) Phase Portrait</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#c-poincare-section">(c) Poincaré Section</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#d-bifurcation-diagram">(d) Bifurcation Diagram</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-analyzing-the-behavior">7. Analyzing the Behavior</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-small-forcing-and-weak-damping">(a) Small Forcing and Weak Damping</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-resonance-condition">(b) Resonance Condition</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#c-strong-damping">(c) Strong Damping</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#d-chaotic-motion">(d) Chaotic Motion</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-conclusion">8. Conclusion</a>
 </li>
 </ul>
 </li>
@@ -135,43 +169,6 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
 <h2 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h2>
-<h2 id="motivation">Motivation:</h2>
-<p>The forced damped pendulum is a captivating example of a physical system with intricate behavior resulting from the interplay of damping, restoring forces, and external driving forces. By introducing both damping and external periodic forcing, the system demonstrates a transition from simple harmonic motion to a rich spectrum of dynamics, including resonance, chaos, and quasiperiodic behavior. These phenomena serve as a foundation for understanding complex real-world systems, such as driven oscillators, climate systems, and mechanical structures under periodic stress.</p>
-<p>Adding forcing introduces new parameters, such as the amplitude and frequency of the external force, which significantly affect the pendulum's behavior. By systematically varying these parameters, a diverse class of solutions can be observed, including synchronized oscillations, chaotic motion, and resonance phenomena. These behaviors not only highlight fundamental physics principles but also provide insights into engineering applications such as energy harvesting, vibration isolation, and mechanical resonance.</p>
-<h2 id="task">Task:</h2>
-<h2 id="1-theoretical-foundation">1. Theoretical Foundation:</h2>
-<ul>
-<li>Start with the differential equation governing the motion of a forced damped pendulum:</li>
-</ul>
-<div class="arithmatex">\[
-\frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
-\]</div>
-<ul>
-<li>
-<p>Derive the approximate solutions for small-angle oscillations.</p>
-</li>
-<li>
-<p>Explore resonance conditions and their implications for the system's energy.</p>
-</li>
-</ul>
-<h2 id="2-analysis-of-dynamics">2. Analysis of Dynamics:</h2>
-<ul>
-<li>Investigate how the damping coefficient, driving amplitude, and driving frequency influence the motion of the pendulum.</li>
-<li>Examine the transition between regular and chaotic motion and their physical interpretations.</li>
-</ul>
-<h2 id="3-practical-applications">3. Practical Applications:</h2>
-<ul>
-<li>Discuss real-world scenarios where the forced damped pendulum model applies, such as in energy harvesting devices, suspension bridges, and oscillating circuits.</li>
-</ul>
-<h2 id="4-implementation">4. Implementation:</h2>
-<ul>
-<li>Create a computational model to simulate the motion of a forced damped pendulum.</li>
-<li>Visualize the behavior under various damping, driving force, and initial conditions.</li>
-<li>Plot phase diagrams and Poincaré sections to illustrate transitions to chaos.</li>
-</ul>
-<hr/>
-<h1 id="answer">Answer</h1>
-<h2 id="investigating-the-dynamics-of-a-forced-damped-pendulum_1">Investigating the Dynamics of a Forced Damped Pendulum</h2>
 <h2 id="1-understanding-the-physical-system"><strong>1. Understanding the Physical System</strong></h2>
 <p>A <strong>pendulum</strong> is a fundamental mechanical system that exhibits a variety of motion types, including periodic, damped, and chaotic behaviors, depending on external influences. When <strong>damping (friction)</strong> and <strong>external periodic forcing</strong> are introduced, the motion becomes more complex and can exhibit chaotic behavior.</p>
 <p>The governing equation of motion for a <strong>forced damped pendulum</strong> is:</p>
@@ -317,8 +314,8 @@ plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-3.png"/>
 <img alt="alt text" src="../image-4.png"/>
-![alt text](image-5.png
-<img alt="alt text" src="../image-6.png"/></p>
+<img alt="alt text" src="../image-5.png"/>
+<img alt="alt text" src="../image-8.png"/></p>
 <h2 id="6-visualizing-results"><strong>6. Visualizing Results</strong></h2>
 <p>After solving for <span class="arithmatex">\(\theta(t)\)</span>, we analyze its behavior using different graphical representations:</p>
 <h3 id="a-time-series-plot"><strong>(a) Time Series Plot</strong></h3>
@@ -328,7 +325,7 @@ plt.show()
 </ul>
 <h3 id="b-phase-portrait"><strong>(b) Phase Portrait</strong></h3>
 <ul>
-<li>Plots <strong>angular position ( <span class="arithmatex">\(\theta\)</span> ) vs. angular velocity ($ \dot{\theta} $)</strong>.</li>
+<li>Plots <strong>angular position ( <span class="arithmatex">\(\theta\)</span> ) vs. angular velocity (<span class="arithmatex">\(\dot{\theta}\)</span>)</strong>.</li>
 <li><strong>Closed loops</strong> indicate periodic motion, while <strong>scattered points</strong> suggest chaos.</li>
 </ul>
 <h3 id="c-poincare-section"><strong>(c) Poincaré Section</strong></h3>
