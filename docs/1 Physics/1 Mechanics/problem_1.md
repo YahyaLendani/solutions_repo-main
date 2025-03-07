@@ -231,8 +231,6 @@ plt.grid()
 plt.show()
 ```
 ---
-![alt text](image-1.png)
----
 
 ### **Step 6: Discussion & Limitations**
 

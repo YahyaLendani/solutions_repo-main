@@ -26,20 +26,20 @@ nav:
           - Problem 1: "1 Physics/1 Mechanics/Problem_1.md"
           - Problem 2: "1 Physics/1 Mechanics/Problem_2.md"
       - Gravity:
-          - Problem 1: "1 Physics/2 Gravity/Problem_1.html"
-          - Problem 2: "1 Physics/2 Gravity/Problem_2.html"
-          - Problem 3: "1 Physics/2 Gravity/Problem_3.html"
+          - Problem 1: "1 Physics/2 Gravity/Problem_1.md"
+          - Problem 2: "1 Physics/2 Gravity/Problem_2.md"
+          - Problem 3: "1 Physics/2 Gravity/Problem_3.md"
       - Waves:
-          - Problem 1: "1 Physics/3 Waves/Problem_1.html"
+          - Problem 1: "1 Physics/3 Waves/Problem_1.md"
       - Circuits:
-          - Problem 1: "1 Physics/4 Circuits/Problem_1.html"
+          - Problem 1: "1 Physics/4 Circuits/Problem_1.md"
       - Electromagnetism:
-          - Problem 1: "1 Physics/5 Electromagnetism/Problem_1.html"
+          - Problem 1: "1 Physics/5 Electromagnetism/Problem_1.md"
       - Statistics:
-          - Problem 1: "1 Physics/6 Statistics/Problem_1.html"
-          - Problem 2: "1 Physics/6 Statistics/Problem_2.html"
+          - Problem 1: "1 Physics/6 Statistics/Problem_1.md"
+          - Problem 2: "1 Physics/6 Statistics/Problem_2.md"
       - Mesurements:
-          - Problem 1: "1 Physics/7 Mesurements/Problem_1.html"
+          - Problem 1: "1 Physics/7 Mesurements/Problem_1.md"
 
 
     

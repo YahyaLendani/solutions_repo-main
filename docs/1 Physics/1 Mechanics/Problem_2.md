@@ -78,6 +78,7 @@ Rewriting the system:
 $$
 \frac{d\theta_1}{dt} = \theta_2
 $$
+
 $$
 \frac{d\theta_2}{dt} = -b\theta_2 - \frac{g}{L} \sin\theta_1 + A \cos(\omega t)
 $$
