@@ -50,24 +50,40 @@ What makes this topic particularly compelling is the number of free parameters i
 ### **Step 1: Establish the Theoretical Foundation**
 
 #### **1. Understand the Concept of Projectile Motion**
-- A projectile follows a **parabolic** path due to the influence of gravity.
-- It has two independent motions:
-  - **Horizontal motion:** Constant velocity, since no acceleration (neglecting air resistance).
-  - **Vertical motion:** Accelerated motion under gravity.
+- A projectile follows a **parabolic** path due to the influence of gravity and air resistace.
+- We consider both horizontal $x$ and vertical $y$ motion with an air resistance force proportional to velocity.
+
+## Equations of Motion
+The governing equations for the projectile motion with air resistance are:
+
+
+$$m \cdot x'' = - b \cdot x'$$
+$$m \cdot y'' = - mg - b \cdot y'$$
+
+where:
+- $m$ = mass of the projectile (kg)
+- $g$ = gravitational acceleration (9.81 m/s²)
+- $b$ = air resistance coefficient (kg/s)
+- $x'$, $y'$ = velocity components
+
+## Initial Conditions
+We define the initial conditions as:
+- $x_0 = 0$, $y_0 = 0$ (starting position)
+- $v_{x0} = 10$, $v_{y0} = 10$ (initial velocity components in m/s)
 
 #### **2. Derive the Equations of Motion**
 - The horizontal and vertical displacement equations are:
 
-  $$x(t) = v_0 \cos\theta \cdot t$$
-  $$y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2$$
+  $$ x(t) = v_0 \cos\theta \cdot t $$
+  $$ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 $$
 
 #### **3. Calculate the Time of Flight**
-- The projectile reaches the ground when $y = 0$, solving for time:
+- The projectile reaches the ground when $ y = 0 $, solving for time:
 
   $$ T = \frac{2 v_0 \sin\theta}{g} $$
 
 #### **4. Derive the Range Equation**
-- The range is the horizontal distance at $T$:
+- The range is the horizontal distance at $ T $:
 
   $$ R = v_0 \cos\theta \cdot T $$
 
@@ -86,15 +102,15 @@ What makes this topic particularly compelling is the number of free parameters i
 - Compute $R$ for multiple angles and observe how it changes.
 
 #### **2. Effects of Initial Velocity**
-- Increase or decrease $v_0$ and check how it impacts $R$.
+- Increase or decrease $ v_0 $ and check how it impacts $ R $.
 
 #### **3. Effects of Gravity**
-- Consider different values of $g$ (e.g., Earth vs. Moon) and see how the range varies.
+- Consider different values of $ g $ (e.g., Earth vs. Moon) and see how the range varies.
 
 #### **4. Find the Symmetry**
-- The equation $R = \frac{v_0^2}{g} \sin 2\theta$ is **symmetric**, meaning:
-  - $\theta = 30^\circ$ and $\theta = 60^\circ$ give the same range.
-  - $\theta = 20^\circ$ and $\theta = 70^\circ$ also give the same range.
+- The equation $ R = \frac{v_0^2}{g} \sin 2\theta $ is **symmetric**, meaning:
+  - $ \theta = 30^\circ $ and $ \theta = 60^\circ $ give the same range.
+  - $ \theta = 20^\circ $ and $ \theta = 70^\circ $ also give the same range.
 
 ---
 
