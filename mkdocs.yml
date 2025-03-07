@@ -22,7 +22,8 @@ extra_javascript:
 nav:
   - Home: index.md
   - Physics:
-    - Mechanics:
-        - Problem_1: 1 Physics/1 Mechanics/problem_1.html
-        - Problem_2: 1 Physics/1 Mechanics/problem_2.html
+      - Mechanics:
+          - Problem 1: "1 Physics/1 Mechanics/Problem_1.html"
+          - Problem 2: "1 Physics/1 Mechanics/Problem_2.html"
+
     
