@@ -52,6 +52,48 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal">Gravity</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/2 Gravity/Problem_1.html">Problem 1</a>
+</li>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/2 Gravity/Problem_2.html">Problem 2</a>
+</li>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/2 Gravity/Problem_3.html">Problem 3</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Waves</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/3 Waves/Problem_1.html">Problem 1</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Circuits</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/4 Circuits/Problem_1.html">Problem 1</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Electromagnetism</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/5 Electromagnetism/Problem_1.html">Problem 1</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Statistics</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/6 Statistics/Problem_1.html">Problem 1</a>
+</li>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/6 Statistics/Problem_2.html">Problem 2</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Mesurements</a>
+<ul>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/7 Mesurements/Problem_1.html">Problem 1</a>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -73,6 +115,216 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
+<h2 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h2>
+<h2 id="step-1-establish-the-theoretical-foundation"><strong>Step 1: Establish the Theoretical Foundation</strong></h2>
+<h1 id="projectile-motion-with-air-resistance"><strong>Projectile Motion with Air Resistance</strong></h1>
+<h2 id="1-equations-of-motion"><strong>1. Equations of Motion</strong></h2>
+<ul>
+<li>The equations governing projectile motion with air resistance are derived from Newton’s second law. We consider a projectile of mass <span class="arithmatex">\(m\)</span> moving under the influence of gravity and an opposing air resistance force proportional to velocity.  </li>
+</ul>
+<p>The equations of motion are given by:  </p>
+<div class="arithmatex">\[
+m \cdot x'' = -b \cdot x'
+\]</div>
+<div class="arithmatex">\[
+m \cdot y'' = -mg - b \cdot y'
+\]</div>
+<h3 id="where"><strong>Where:</strong></h3>
+<ul>
+<li><span class="arithmatex">\(m\)</span> = mass of the projectile (kg)  </li>
+<li><span class="arithmatex">\(g\)</span> = gravitational acceleration (9.81 m/s²)  </li>
+<li><span class="arithmatex">\(b\)</span> = air resistance coefficient (kg/s)  </li>
+<li><span class="arithmatex">\(x', y'\)</span> = velocity components  </li>
+</ul>
+<hr/>
+<h2 id="2-initial-conditions"><strong>2. Initial Conditions</strong></h2>
+<p>The initial conditions define the starting point and initial velocity components of the projectile.  </p>
+<div class="arithmatex">\[
+x_0 = 0, \quad y_0 = 0
+\]</div>
+<p>(Starting position at the origin)  </p>
+<div class="arithmatex">\[
+v_{x0} = 10, \quad v_{y0} = 10
+\]</div>
+<p>(Initial velocity components in m/s)  </p>
+<hr/>
+<h2 id="3-deriving-the-equations-of-motion"><strong>3. Deriving the Equations of Motion</strong></h2>
+<h3 id="step-1-solve-for-horizontal-motion"><strong>Step 1: Solve for Horizontal Motion</strong></h3>
+<p>From the equation:</p>
+<div class="arithmatex">\[
+m \cdot x'' = -b \cdot x'
+\]</div>
+<p>Rewriting:</p>
+<div class="arithmatex">\[
+x'' + \frac{b}{m} x' = 0
+\]</div>
+<p>This is a first-order linear differential equation in <span class="arithmatex">\(x'\)</span>. The general solution for velocity is:</p>
+<div class="arithmatex">\[
+x'(t) = v_{x0} e^{-\frac{b}{m} t}
+\]</div>
+<p>To find the horizontal displacement, integrate:</p>
+<div class="arithmatex">\[
+x(t) = \frac{m}{b} v_{x0} \left( 1 - e^{-\frac{b}{m} t} \right)
+\]</div>
+<hr/>
+<h3 id="step-2-solve-for-vertical-motion"><strong>Step 2: Solve for Vertical Motion</strong></h3>
+<p>From the vertical motion equation:</p>
+<div class="arithmatex">\[
+m \cdot y'' = -mg - b \cdot y'
+\]</div>
+<p>Rewriting:</p>
+<div class="arithmatex">\[
+y'' + \frac{b}{m} y' + g = 0
+\]</div>
+<p>Solving for <span class="arithmatex">\(y'\)</span>:</p>
+<div class="arithmatex">\[
+y'(t) = \left( v_{y0} + \frac{mg}{b} \right) e^{-\frac{b}{m} t} - \frac{mg}{b}
+\]</div>
+<p>Integrating to get <span class="arithmatex">\(y(t)\)</span>:</p>
+<div class="arithmatex">\[
+y(t) = \frac{m}{b} \left( v_{y0} + \frac{mg}{b} \right) \left( 1 - e^{-\frac{b}{m} t} \right) - \frac{mg}{b} t
+\]</div>
+<p>For small air resistance (<span class="arithmatex">\(b \approx 0\)</span>), this simplifies to:</p>
+<div class="arithmatex">\[
+y(t) = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</div>
+<hr/>
+<h2 id="4-calculate-the-time-of-flight"><strong>4. Calculate the Time of Flight</strong></h2>
+<p>The projectile reaches the ground when <span class="arithmatex">\(y = 0\)</span>. Using the simplified equation:</p>
+<div class="arithmatex">\[
+y(t) = v_0 \sin \theta \cdot t - \frac{1}{2} g t^2
+\]</div>
+<p>Setting <span class="arithmatex">\(y = 0\)</span> and solving for <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+t \left( v_0 \sin \theta - \frac{1}{2} g t \right) = 0
+\]</div>
+<p>This gives two solutions:</p>
+<div class="arithmatex">\[
+t = 0 \quad \text{(initial time)}
+\]</div>
+<div class="arithmatex">\[
+t = \frac{2 v_0 \sin \theta}{g}
+\]</div>
+<p>Thus, the total time of flight is:</p>
+<div class="arithmatex">\[
+T = \frac{2 v_0 \sin \theta}{g}
+\]</div>
+<h4 id="4-derive-the-range-equation"><strong>4. Derive the Range Equation</strong></h4>
+<ul>
+<li>The range is the horizontal distance at <span class="arithmatex">\(T\)</span>:</li>
+</ul>
+<p>$$ R = v_0 \cos\theta \cdot T$$</p>
+<ul>
+<li>Substituting <span class="arithmatex">\(T\)</span>:</li>
+</ul>
+<p>$$
+  R = v_0 \cos \theta \cdot \frac{2 v_0 \sin \theta}{g}
+  $$</p>
+<ul>
+<li>Using the trigonometric identity <span class="arithmatex">\(2 \sin \theta \cos \theta = \sin 2\theta\)</span> , we obtain:</li>
+</ul>
+<p>$$
+  R = \frac{v_0^2 \sin 2\theta}{g}
+  $$</p>
+<h4 id="5-find-the-optimal-angle-for-maximum-range"><strong>5. Find the Optimal Angle for Maximum Range</strong></h4>
+<ul>
+<li>The range depends on <span class="arithmatex">\(\sin 2\theta\)</span>, which is maximized when <span class="arithmatex">\(2\theta = 90^\circ\)</span>, or <span class="arithmatex">\(\theta = 45^\circ\)</span>.</li>
+<li>Thus, the optimal angle for maximum range is <span class="arithmatex">\(45^\circ\)</span>.</li>
+</ul>
+<h3 id="step-3-analyze-how-range-changes-with-angle"><strong>Step 3: Analyze How Range Changes with Angle</strong></h3>
+<h4 id="1-varying-the-angle-from-0-to-90"><strong>1. Varying the Angle from 0° to 90°</strong></h4>
+<ul>
+<li>Compute <span class="arithmatex">\(R\)</span> for multiple angles and observe how it changes.</li>
+</ul>
+<h4 id="2-effects-of-initial-velocity"><strong>2. Effects of Initial Velocity</strong></h4>
+<ul>
+<li>Increase or decrease <span class="arithmatex">\(v_0\)</span> and check how it impacts $ R $.</li>
+</ul>
+<h4 id="3-effects-of-gravity"><strong>3. Effects of Gravity</strong></h4>
+<ul>
+<li>Consider different values of <span class="arithmatex">\(g\)</span> (e.g., Earth vs. Moon) and see how the range varies.</li>
+</ul>
+<h4 id="4-find-the-symmetry"><strong>4. Find the Symmetry</strong></h4>
+<ul>
+<li>The equation <span class="arithmatex">\(R = \frac{v_0^2}{g} \sin 2\theta\)</span> is <strong>symmetric</strong>, meaning:</li>
+<li>$\theta = 30^\circ $ and $ \theta = 60^\circ$ give the same range.</li>
+<li>$\theta = 20^\circ $ and $ \theta = 70^\circ$ also give the same range.</li>
+</ul>
+<hr/>
+<h3 id="step-4-practical-applications"><strong>Step 4: Practical Applications</strong></h3>
+<h4 id="1-sports-applications"><strong>1. Sports Applications</strong></h4>
+<ul>
+<li>Optimizing kick angles in soccer, golf, or basketball for maximum range.</li>
+</ul>
+<h4 id="2-ballistics-military-applications"><strong>2. Ballistics &amp; Military Applications</strong></h4>
+<ul>
+<li>Determining the best firing angle for artillery.</li>
+</ul>
+<h4 id="3-rocket-science"><strong>3. Rocket Science</strong></h4>
+<ul>
+<li>Understanding launch angles for spacecraft trajectories.</li>
+</ul>
+<hr/>
+<h3 id="step-5-implementation-in-python"><strong>Step 5: Implementation in Python</strong></h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Parameters
+m = 1.0   # Mass (kg)
+g = 9.81  # Gravity (m/s^2)
+b = 0.1   # Air resistance coefficient (kg/s)
+
+# Initial conditions
+x0, y0 = 0.0, 0.0  # Initial position (m)
+vx0, vy0 = 10.0, 10.0  # Initial velocity (m/s)
+
+# Define the equations of motion with air resistance
+def equations(t, state):
+    x, vx, y, vy = state
+    dxdt = vx
+    dvxdt = - (b / m) * vx  # Air resistance in x-direction
+    dydt = vy
+    dvydt = -g - (b / m) * vy  # Gravity and air resistance in y-direction
+    return [dxdt, dvxdt, dydt, dvydt]
+
+# Time span for simulation
+t_span = (0, 2)
+t_eval = np.linspace(0, 2, 100)
+
+# Solve the system
+sol = solve_ivp(equations, t_span, [x0, vx0, y0, vy0], t_eval=t_eval)
+
+# Extract solution
+x, vx, y, vy = sol.y
+
+# Plot results
+plt.figure(figsize=(8, 5))
+plt.plot(x, y, label="Projectile Motion with Air Resistance")
+plt.xlabel("X Position (m)")
+plt.ylabel("Y Position (m)")
+plt.title("Projectile Motion Under Gravity and Air Resistance")
+plt.legend()
+plt.grid()
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="_1"><img alt="alt text" src="../image-1.png"/></h2>
+<h3 id="step-6-discussion-limitations"><strong>Step 6: Discussion &amp; Limitations</strong></h3>
+<h4 id="1-what-does-the-graph-show"><strong>1. What does the graph show?</strong></h4>
+<ul>
+<li>A clear peak at $ \theta = 45^\circ $.</li>
+<li>Symmetry in range for complementary angles.</li>
+</ul>
+<h4 id="2-limitations-of-the-model"><strong>2. Limitations of the Model</strong></h4>
+<ul>
+<li>Assumes flat ground .</li>
+</ul>
+<h4 id="3-how-to-improve-the-model"><strong>3. How to Improve the Model?</strong></h4>
+<ul>
+<li>Add drag force.</li>
+<li>Consider different launch heights.</li>
+</ul>
 </div>
 </div><footer>
 <hr/>
