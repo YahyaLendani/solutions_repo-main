@@ -254,15 +254,22 @@ plt.show()
 ![alt text](projectile_motion.gif)
 ---
 
-## **Step 6: Discussion & Limitations**
+### **Step 6: Discussion & Limitations**
 
-### **1. What does the graph show?**
-- A clear peak at $\theta = 45^\circ$.
+#### **1. What does the graph show?**
+- A clear peak at $ \theta = 45^\circ $.
 - Symmetry in range for complementary angles.
+- $\theta = 30^\circ$
+   and 
+  $\theta = 60^\circ$ give nearly the same range.
 
-### **2. Limitations of the Model**
+  $\theta = 20^\circ$
+   and 
+  $\theta = 70^\circ$ also give nearly the same range.
+
+#### **2. Limitations of the Model**
 - Assumes flat ground .
 
-### **3. How to Improve the Model?**
+#### **3. How to Improve the Model?**
 - Add drag force.
 - Consider different launch heights.
