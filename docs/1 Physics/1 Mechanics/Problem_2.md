@@ -167,6 +167,7 @@ plt.show()
 ![alt text](image-4.png)
 ![alt text](image-5.png)
 ![alt text](image-8.png)
+![alt text](forced_damped_pendulum.gif)
 
 ## **6. Visualizing Results**
 After solving for $\theta(t)$, we analyze its behavior using different graphical representations:

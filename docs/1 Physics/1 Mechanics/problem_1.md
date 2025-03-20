@@ -188,47 +188,70 @@ $$
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
+import matplotlib.animation as animation
+
+# Constants
+g = 9.81  # Gravity (m/s^2)
+rho = 1.225  # Air density (kg/m^3)
+Cd = 0.47  # Drag coefficient (approx for a sphere)
+r = 0.05  # Projectile radius (m)
+m = 0.145  # Mass of projectile (kg)
+A = np.pi * r**2  # Cross-sectional area (m^2)
+c = 0.5 * Cd * rho * A  # Drag constant
+
+def simulate_projectile(v0, angle, dt=0.001, max_time=10):
+    """Simulates projectile motion with air resistance using smaller time steps for accuracy."""
+    theta = np.radians(angle)
+    vx, vy = v0 * np.cos(theta), v0 * np.sin(theta)
+    x, y = [0], [0]
+    t = 0
+    
+    while y[-1] >= 0:
+        v = np.sqrt(vx**2 + vy**2)
+        drag_force = c * v  # Drag force magnitude
+        ax = -drag_force/m * vx / v
+        ay = -g - (drag_force/m * vy / v)
+        
+        vx += ax * dt
+        vy += ay * dt
+        
+        x.append(x[-1] + vx * dt)
+        y.append(y[-1] + vy * dt)
+        t += dt
+        
+        if t >= max_time and y[-1] < 0:
+            break
+    
+    return x, y
 
 # Parameters
-m = 1.0   # Mass (kg)
-g = 9.81  # Gravity (m/s^2)
-b = 0.1   # Air resistance coefficient (kg/s)
+angles = [20, 30, 45, 60, 70]  # Different launch angles
+v0 = 30  # Initial speed (m/s)
 
-# Initial conditions
-x0, y0 = 0.0, 0.0  # Initial position (m)
-vx0, vy0 = 10.0, 10.0  # Initial velocity (m/s)
+# Generate trajectories
+trajectories = [simulate_projectile(v0, angle) for angle in angles]
 
-# Define the equations of motion with air resistance
-def equations(t, state):
-    x, vx, y, vy = state
-    dxdt = vx
-    dvxdt = - (b / m) * vx  # Air resistance in x-direction
-    dydt = vy
-    dvydt = -g - (b / m) * vy  # Gravity and air resistance in y-direction
-    return [dxdt, dvxdt, dydt, dvydt]
+# Create animation
+fig, ax = plt.subplots()
+ax.set_xlim(0, max(max(x) for x, _ in trajectories))
+ax.set_ylim(0, max(max(y) for _, y in trajectories))
+ax.set_xlabel("Distance (m)")
+ax.set_ylabel("Height (m)")
+ax.set_title("Projectile Motion with Air Resistance")
+lines = [ax.plot([], [], label=f"{angle}°")[0] for angle in angles]
+ax.legend()
 
-# Time span for simulation
-t_span = (0, 2)
-t_eval = np.linspace(0, 2, 100)
+def update(frame):
+    for i, line in enumerate(lines):
+        x, y = trajectories[i]
+        line.set_data(x[:frame * 20], y[:frame * 20])  # Speed up animation
+    return lines
 
-# Solve the system
-sol = solve_ivp(equations, t_span, [x0, vx0, y0, vy0], t_eval=t_eval)
-
-# Extract solution
-x, vx, y, vy = sol.y
-
-# Plot results
-plt.figure(figsize=(8, 5))
-plt.plot(x, y, label="Projectile Motion with Air Resistance")
-plt.xlabel("X Position (m)")
-plt.ylabel("Y Position (m)")
-plt.title("Projectile Motion Under Gravity and Air Resistance")
-plt.legend()
-plt.grid()
+ani = animation.FuncAnimation(fig, update, frames=700, interval=10, blit=True)  # Faster animation
+ani.save("projectile_motion.gif", writer="pillow")
 plt.show()
 ```
-![alt text](image-7.png)
+![alt text](projectile_motion.gif)
 ---
 
 ## **Step 6: Discussion & Limitations**
