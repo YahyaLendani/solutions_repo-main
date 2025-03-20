@@ -224,4 +224,3 @@ The animation produced by the code visually represents **Kepler's Third Law** an
 #### **Outcome**:
 The animation visually demonstrates **Kepler's Third Law** in action, showing how the orbital period squared (T²) increases with the cube of the orbital radius (r³). The animated plot smoothly builds as more data points are added, giving a clear and intuitive understanding of the relationship between these two variables.
 
-The final output is a **GIF** that can be saved and shared, showing the progression of the relationship between orbital radius and period.
