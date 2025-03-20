@@ -257,7 +257,7 @@ plt.show()
 ### **Step 6: Discussion & Limitations**
 
 #### **1. What does the graph show?**
-- A clear peak at $ \theta = 45^\circ $.
+- A clear peak at $\theta = 45^\circ$.
 - Symmetry in range for complementary angles.
 - $\theta = 30^\circ$
    and 
