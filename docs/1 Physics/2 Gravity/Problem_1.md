@@ -181,7 +181,7 @@ ani.save("kepler_orbit_animated.gif", writer="pillow")
 plt.show()
 
 ```
-![alt text](<../1 Mechanics/kepler_orbit_animated.gif>)
+![alt text](kepler_orbit_animated.gif)
 
 ### Visual Output of the Animation
 
