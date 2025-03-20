@@ -252,6 +252,68 @@ ani.save("projectile_motion.gif", writer="pillow")
 plt.show()
 ```
 ![alt text](projectile_motion.gif)
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+# Constants
+g = 9.81  # Gravity (m/s^2)
+
+def simulate_projectile(v0, angle, dt=0.001, max_time=10):
+    """Simulates projectile motion without air resistance."""
+    theta = np.radians(angle)
+    vx, vy = v0 * np.cos(theta), v0 * np.sin(theta)
+    x, y = [0], [0]
+    t = 0
+    
+    while y[-1] >= 0:
+        # Update velocities
+        ax = 0  # No horizontal acceleration
+        ay = -g  # Only gravity affects vertical acceleration
+        
+        vx += ax * dt
+        vy += ay * dt
+        
+        # Update positions
+        x.append(x[-1] + vx * dt)
+        y.append(y[-1] + vy * dt)
+        
+        t += dt
+        
+        if t >= max_time and y[-1] < 0:
+            break
+    
+    return x, y
+
+# Parameters
+angles = [20, 30, 45, 60, 70]  # Different launch angles
+v0 = 30  # Initial speed (m/s)
+
+# Generate trajectories
+trajectories = [simulate_projectile(v0, angle) for angle in angles]
+
+# Create animation
+fig, ax = plt.subplots()
+ax.set_xlim(0, max(max(x) for x, _ in trajectories))
+ax.set_ylim(0, max(max(y) for _, y in trajectories))
+ax.set_xlabel("Distance (m)")
+ax.set_ylabel("Height (m)")
+ax.set_title("Projectile Motion Without Air Resistance")
+lines = [ax.plot([], [], label=f"{angle}°")[0] for angle in angles]
+ax.legend()
+
+def update(frame):
+    for i, line in enumerate(lines):
+        x, y = trajectories[i]
+        line.set_data(x[:frame * 20], y[:frame * 20])  # Speed up animation
+    return lines
+
+ani = animation.FuncAnimation(fig, update, frames=700, interval=10, blit=True)  # Faster animation
+ani.save("projectile_motion_no_air_resistance.gif", writer="pillow")
+plt.show()
+```
+![alt text](projectile_motion_no_air_resistance.gif)
 ---
 
 ### **Step 6: Discussion & Limitations**
