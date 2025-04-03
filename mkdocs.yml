@@ -9,8 +9,8 @@ theme:
 markdown_extensions:
   - toc
   - tables
-  - pydownx.arithmatex:
-  - generic: true
+  - pymdownx.arithmatex:
+      generic: true
 plugins:
   - search
   - mermaid2
