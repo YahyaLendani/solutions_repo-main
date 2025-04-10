@@ -133,55 +133,53 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-# Constants
-G = 6.67430e-11  # Gravitational constant in m^3 kg^-1 s^-2
-M = 5.972e24      # Mass of Earth in kg
+# Constants for the central star (like the Sun)
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M = 1.989e30     # Mass of the Sun (kg)
 
-# Function to calculate orbital period (Kepler's Third Law)
-def orbital_period(radius):
-    return 2 * np.pi * np.sqrt(radius**3 / (G * M))
+# Orbital radii (scaled for visualization)
+radii = np.array([0.5, 1.0, 1.5, 2.0, 2.5]) * 1e11  # In meters
 
-# Range of orbital radii (in meters)
-radii = np.linspace(1e6, 1e8, 100)  # From 1,000 km to 100,000 km
+# Orbital periods calculated using Kepler's Third Law
+periods = np.sqrt((4 * np.pi**2 * radii**3) / (G * M))  # Periods in seconds
+periods_days = periods / (60 * 60 * 24)  # Convert to days
 
-# Calculate corresponding orbital periods
-periods = orbital_period(radii)
+# Set up the figure and axis
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.set_xlim(-3e11, 3e11)
+ax.set_ylim(-3e11, 3e11)
+ax.set_aspect('equal')
+ax.set_facecolor('black')
 
-# Create a figure and axis for plotting
-fig, ax = plt.subplots(figsize=(8, 6))
-ax.set_xlim(min(radii), max(radii))
-ax.set_ylim(min(periods**2), max(periods**2))
-ax.set_title("Kepler's Third Law: Orbital Period vs Orbital Radius")
-ax.set_xlabel('Orbital Radius (m)')
-ax.set_ylabel('Orbital Period Squared (s^2)')
-line, = ax.plot([], [], label='T^2 vs r^3')
-ax.plot(radii, radii**3 * (2 * np.pi)**2 / (G * M), 'r--', label='Expected T^2 vs r^3')
-ax.legend()
+# Create planets as points that will orbit the central star
+planet_points = [plt.plot([], [], 'o', color=f'C{i}', markersize=6)[0] for i in range(len(radii))]
 
-# Initialization function: plot the background of each frame
-def init():
-    line.set_data([], [])
-    return line,
+# Define the central star (the Sun)
+ax.scatter(0, 0, color='yellow', s=100, label='Sun')
 
-# Animation function: update the data at each frame
-def animate(i):
-    # Slice the radius and period arrays for each frame
-    x = radii[:i]
-    y = orbital_period(radii[:i])**2
-    line.set_data(x, y)
-    return line,
+# Function to update planet positions
+def update_orbits(frame):
+    # Update positions of planets
+    for i, planet in enumerate(planet_points):
+        angle = 2 * np.pi * frame / periods_days[i]  # Orbital angle based on the time step
+        x = radii[i] * np.cos(angle)
+        y = radii[i] * np.sin(angle)
+        planet.set_data([x], [y])  # Ensure x and y are lists/arrays
+
+    return planet_points
 
 # Create the animation
-ani = animation.FuncAnimation(fig, animate, frames=len(radii), init_func=init, blit=True, interval=30)
+ani = animation.FuncAnimation(fig, update_orbits, frames=np.arange(0, 365), interval=50, blit=False)
 
 # Save the animation as a GIF
-ani.save("kepler_orbit_animated.gif", writer="pillow")
+ani.save("kepler_orbit_simulation.gif", writer="pillow")
 
-# Show the animation (optional)
+# Show the plot
 plt.show()
 
 ```
-![alt text](kepler_orbit_animated.gif)
+![alt text](image-1.png)
+![alt text](kepler_orbit_simulation.gif)
 
 ### Visual Output of the Animation
 

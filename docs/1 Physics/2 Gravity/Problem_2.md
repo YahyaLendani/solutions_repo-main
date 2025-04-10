@@ -155,6 +155,7 @@ ani.save("cosmic_velocities_smoother.gif", writer="Pillow", fps=5)
 plt.show()
 ```
 ![alt text](cosmic_velocities_vivid_alternate.gif)
+
 ### 4. Discuss Their Importance in Space Exploration
 First Cosmic Velocity: This is essential for satellites to maintain orbit. For example, the ISS orbits Earth at a speed close to 7.8 km/s, which is nearly the first cosmic velocity of Earth.
 
