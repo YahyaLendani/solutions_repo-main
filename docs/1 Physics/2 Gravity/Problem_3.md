@@ -161,6 +161,7 @@ plt.show()
 ```
 ![alt text](payload_trajectory_visualized.gif)
 ![alt text](multiple_payloads_trajectory.gif)
+![alt text](multiple_payloads_trajectoryy.gif)
 
 ## Step 5: Visualizing and Analyzing the Results
 Once the simulation is complete, we can extract the x and y positions of the payload and plot them to visualize the trajectory. This helps us understand whether the object will follow a parabolic, elliptical, or hyperbolic path.
