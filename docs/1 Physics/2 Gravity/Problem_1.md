@@ -180,7 +180,7 @@ plt.show()
 ```
 ![alt text](image-1.png)
 ![alt text](kepler_orbit_simulation.gif)
-
+![alt text](image-2.png)
 ### Visual Output of the Animation
 
 The animation produced by the code visually represents **Kepler's Third Law** and how the **orbital period squared (T²)** relates to the **orbital radius (r³)**. The animation evolves over time, gradually adding data points to the graph.
