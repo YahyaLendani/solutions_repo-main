@@ -19,10 +19,15 @@ $$
 
 Where:
 - $\eta(x, y, t)$ is the displacement at point $(x, y)$ at time $t$.
+
 - $A$ is the amplitude of the wave.
+
 - $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ is the distance from the source $(x_0, y_0)$ to the point $(x, y)$.
+
 - $k = \frac{2\pi}{\lambda}$ is the wave number, related to the wavelength $\lambda$.
+
 - $\omega = 2\pi f$ is the angular frequency, related to the frequency $f$.
+
 - $\phi$ is the initial phase of the wave.
 
 ### 2. Superposition Principle
@@ -156,9 +161,13 @@ ani.save('interference_pattern.gif', writer=writer)
 plt.show()
 ```
 ![alt text](interference_pattern.gif)
+![alt text](wave.png)
 ![alt text](circular_interference_pattern.gif)
+![alt text](<wave 0.png>)
 ![alt text](hexagonal_interference_pattern.gif)
+![alt text](<wave 1.png>)
 ![alt text](random_interference_pattern.gif)
+![alt text](<wave 2.png>)
 
 # Conclusion of Visualizations
 
