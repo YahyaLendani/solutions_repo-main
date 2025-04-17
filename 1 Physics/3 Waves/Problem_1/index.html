@@ -120,6 +120,160 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="wave-interference-patterns-from-point-sources-at-polygon-vertices">Wave Interference Patterns from Point Sources at Polygon Vertices</h1>
+<h2 id="overview">Overview</h2>
+<p>This task involves analyzing the interference patterns formed on the water surface due to the superposition of waves emitted from point sources placed at the vertices of a regular polygon. The primary concepts used in the task include the wave equation, the principle of superposition, and the visualization of interference patterns.</p>
+<hr/>
+<h2 id="basic-concepts">Basic Concepts</h2>
+<h3 id="1-wave-equation">1. Wave Equation</h3>
+<p>The wave equation that describes the displacement of the water surface due to a wave emitted from a point source is:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(k r - \omega t + \phi)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\eta(x, y, t)\)</span> is the displacement at point <span class="arithmatex">\((x, y)\)</span> at time <span class="arithmatex">\(t\)</span>.
+- <span class="arithmatex">\(A\)</span> is the amplitude of the wave.
+- <span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance from the source <span class="arithmatex">\((x_0, y_0)\)</span> to the point <span class="arithmatex">\((x, y)\)</span>.
+- <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, related to the wavelength <span class="arithmatex">\(\lambda\)</span>.
+- <span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span>.
+- <span class="arithmatex">\(\phi\)</span> is the initial phase of the wave.</p>
+<h3 id="2-superposition-principle">2. Superposition Principle</h3>
+<p>The principle of superposition states that when multiple waves intersect, the resulting wave displacement at any point is the sum of the displacements from each individual wave. Mathematically, the total displacement is:</p>
+<div class="arithmatex">\[
+\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(N\)</span> is the number of sources (the vertices of the polygon).
+- <span class="arithmatex">\(\eta_i(x, y, t)\)</span> represents the wave from the <span class="arithmatex">\(i\)</span>-th source.</p>
+<hr/>
+<h2 id="step-by-step-approach">Step-by-Step Approach</h2>
+<h3 id="step-1-choose-a-regular-polygon">Step 1: Choose a Regular Polygon</h3>
+<p>Start by selecting a regular polygon for placing the point sources. Common choices are:
+- <strong>Equilateral triangle</strong> (3 sides/vertices)
+- <strong>Square</strong> (4 sides/vertices)
+- <strong>Pentagon</strong> (5 sides/vertices)
+- <strong>Hexagon</strong> (6 sides/vertices)</p>
+<h3 id="step-2-position-the-sources-at-the-vertices">Step 2: Position the Sources at the Vertices</h3>
+<p>Once you've chosen a polygon, position point wave sources at the vertices. For example, for a <strong>square</strong> centered at the origin with side length <span class="arithmatex">\(L\)</span>, the vertex positions are:
+- <span class="arithmatex">\((x_1, y_1) = (-L/2, -L/2)\)</span>
+- <span class="arithmatex">\((x_2, y_2) = (L/2, -L/2)\)</span>
+- <span class="arithmatex">\((x_3, y_3) = (L/2, L/2)\)</span>
+- <span class="arithmatex">\((x_4, y_4) = (-L/2, L/2)\)</span></p>
+<p>These are the positions of the 4 wave sources.</p>
+<h3 id="step-3-write-the-wave-equations">Step 3: Write the Wave Equations</h3>
+<p>For each wave source, the displacement <span class="arithmatex">\(\eta_i(x, y, t)\)</span> at any point <span class="arithmatex">\((x, y)\)</span> is given by the wave equation:</p>
+<div class="arithmatex">\[
+\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cdot \cos(k r_i - \omega t + \phi)
+\]</div>
+<p>Where <span class="arithmatex">\(r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2}\)</span> is the distance from the source <span class="arithmatex">\((x_i, y_i)\)</span> to the point <span class="arithmatex">\((x, y)\)</span>.</p>
+<h3 id="step-4-superposition-of-waves">Step 4: Superposition of Waves</h3>
+<p>The total displacement at any point <span class="arithmatex">\((x, y)\)</span> is the sum of the displacements from all sources:</p>
+<div class="arithmatex">\[
+\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)
+\]</div>
+<p>You will calculate the displacement from all sources at each point on the water surface and add them together.</p>
+<h3 id="step-5-analyze-the-interference-patterns">Step 5: Analyze the Interference Patterns</h3>
+<p>Once you have the total displacement, analyze the interference patterns:
+- <strong>Constructive Interference</strong> occurs when the displacements add up in the same direction, resulting in a larger displacement (wave amplification).
+- <strong>Destructive Interference</strong> occurs when the displacements cancel each other out, resulting in a smaller displacement or zero displacement (wave cancellation).</p>
+<h3 id="step-6-visualization">Step 6: Visualization</h3>
+<p>Use tools like Python and Matplotlib to visualize the interference patterns. A contour plot will help you identify regions of constructive and destructive interference.</p>
+<hr/>
+<h2 id="python-code-implementation">Python Code Implementation</h2>
+<p>Here's a basic Python script to simulate and visualize the wave interference patterns:</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Parameters
+A = 1  # Amplitude
+lambda_ = 1  # Wavelength
+f = 1  # Frequency
+omega = 2 * np.pi * f  # Angular frequency
+k = 2 * np.pi / lambda_  # Wave number
+phi = 0  # Initial phase
+
+# Define source positions (for a square, 4 vertices)
+sources = [(-1, -1), (1, -1), (1, 1), (-1, 1)]
+
+# Define the function to calculate displacement from a single source
+def wave(x, y, x0, y0, t):
+    r = np.sqrt((x - x0)**2 + (y - y0)**2)  # Distance from the source
+    return A / np.sqrt(r) * np.cos(k * r - omega * t + phi)  # Displacement
+
+# Create a grid of points on the water surface
+x_vals = np.linspace(-2, 2, 400)
+y_vals = np.linspace(-2, 2, 400)
+X, Y = np.meshgrid(x_vals, y_vals)
+
+# Set up the figure and axis
+fig, ax = plt.subplots(figsize=(6, 6))
+
+# Initial empty contour plot (it will be updated in each frame)
+contour = ax.contourf(X, Y, np.zeros(X.shape), 20, cmap='RdBu')
+fig.colorbar(contour, ax=ax, label="Displacement")
+ax.set_title("Interference Pattern from Square Sources")
+ax.set_xlabel("X")
+ax.set_ylabel("Y")
+
+# Function to update the plot for each frame
+def update(t):
+    Z = np.zeros(X.shape)
+    for (x0, y0) in sources:
+        Z += wave(X, Y, x0, y0, t)
+
+    # Clear the previous contour plot
+    for c in ax.collections:
+        c.remove()
+
+    # Create new contour plot for the current time step
+    ax.contourf(X, Y, Z, 20, cmap='RdBu')
+    return ax.collections
+
+# Create the animation
+ani = animation.FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 100), interval=50)
+
+# Save the animation as a GIF using PillowWriter
+writer = PillowWriter(fps=20)
+ani.save('interference_pattern.gif', writer=writer)
+
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../interference_pattern.gif"/>
+<img alt="alt text" src="../circular_interference_pattern.gif"/>
+<img alt="alt text" src="../hexagonal_interference_pattern.gif"/>
+<img alt="alt text" src="../random_interference_pattern.gif"/></p>
+<h1 id="conclusion-of-visualizations">Conclusion of Visualizations</h1>
+<p>Throughout this exploration, we created and visualized various wave interference patterns, each offering unique insights into the behavior of waves emitted from multiple sources. Here's a summary of the different patterns and the conclusions we can draw from them:</p>
+<h2 id="1-square-source-arrangement">1. Square Source Arrangement</h2>
+<ul>
+<li><strong>Pattern Overview</strong>: By placing wave sources at the vertices of a square, we observed symmetrical interference patterns with regions of constructive and destructive interference.</li>
+<li><strong>Insights</strong>: This arrangement showed how regular geometric configurations lead to predictable interference patterns. The square configuration highlights the symmetric nature of wave interactions in structured environments.</li>
+</ul>
+<h2 id="2-circular-source-arrangement">2. Circular Source Arrangement</h2>
+<ul>
+<li><strong>Pattern Overview</strong>: When the wave sources were arranged in a circle, the interference pattern became more circular, with radial symmetry emerging from the central point.</li>
+<li><strong>Insights</strong>: This pattern demonstrated the effect of rotational symmetry on wave interference. The waves' interaction resulted in clear regions of constructive interference along the circle's radius and destructive interference near the center. It was an excellent demonstration of how wave sources placed in circular symmetry impact the resulting interference.</li>
+</ul>
+<h2 id="3-hexagonal-source-arrangement">3. Hexagonal Source Arrangement</h2>
+<ul>
+<li><strong>Pattern Overview</strong>: The interference pattern from six sources arranged at the vertices of a hexagon resulted in an intricate and symmetrical pattern with sixfold symmetry.</li>
+<li><strong>Insights</strong>: This configuration further emphasized how the symmetry of the source placement influences the interference results. The hexagonal arrangement produced complex interference regions that could not be easily predicted from simple geometric shapes, providing a visually striking example of wave behavior.</li>
+</ul>
+<h2 id="4-random-source-placement">4. Random Source Placement</h2>
+<ul>
+<li><strong>Pattern Overview</strong>: With randomly placed sources on the surface, the resulting interference pattern was irregular and dynamic, with no clear symmetry. This randomness introduced a new level of unpredictability.</li>
+<li><strong>Insights</strong>: The random arrangement of wave sources provided a more chaotic interference pattern, which emphasized how wave interference becomes more unpredictable and complex when the sources are not in a regular arrangement. This visualization demonstrated the real-world unpredictability of wave interactions when the sources are distributed arbitrarily.</li>
+</ul>
+<h2 id="general-insights-from-all-visualizations">General Insights from All Visualizations:</h2>
+<ul>
+<li><strong>Superposition Principle</strong>: In all patterns, we observed the core principle of wave superposition—at each point, the displacement is the sum of the contributions from all sources. This is visible in the interference patterns, where areas of constructive interference show amplification, while destructive interference regions show cancellation.</li>
+<li><strong>Effect of Source Arrangement</strong>: The shape and symmetry of the source arrangement significantly influence the resulting interference patterns. Regular geometric arrangements (square, circular, hexagonal) create distinct, predictable patterns, while random placements result in chaotic, less predictable behavior.</li>
+<li><strong>Wave Behavior</strong>: These visualizations helped to illustrate fundamental concepts of wave mechanics, including constructive and destructive interference, and how waveforms interact in a space over time. The animations effectively demonstrated how waves evolve and interfere with each other dynamically.</li>
+</ul>
+<h2 id="conclusion">Conclusion:</h2>
+<p>These visualizations collectively help us understand how the arrangement of wave sources affects the overall interference pattern and how we can visualize and analyze wave interactions in different scenarios. Whether in structured geometries or random setups, the core principles of wave interference—constructive and destructive interference—are always at play, and these patterns offer a visually engaging way to study and comprehend the underlying physics of wave phenomena.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
