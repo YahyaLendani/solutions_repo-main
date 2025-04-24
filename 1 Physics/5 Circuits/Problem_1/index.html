@@ -13,7 +13,7 @@
 <script>
         // Current page data
         var mkdocs_page_name = "Problem 1";
-        var mkdocs_page_input_path = "1 Physics\\5 Circuits\\Problem_1.md";
+        var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/1 Mechanics/Problem_1.md">Problem 1</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -120,6 +120,150 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="calculating-equivalent-resistance-using-graph-theory">Calculating Equivalent Resistance Using Graph Theory</h1>
+<h2 id="1-circuit-representation-as-a-graph">1. Circuit Representation as a Graph</h2>
+<p>In graph theory, a <strong>graph</strong> consists of <strong>nodes (vertices)</strong> and <strong>edges (arcs)</strong>. In the context of circuits:</p>
+<ul>
+<li>
+<p><strong>Nodes (Vertices)</strong>: These represent the <strong>junctions</strong> or points in the circuit where different components like resistors, capacitors, or inductors meet. Essentially, these are the points where electrical connections are made.</p>
+</li>
+<li>
+<p><strong>Edges (Arcs)</strong>: These represent the <strong>resistors</strong> or any other components in the circuit, where the <strong>weight of the edge</strong> corresponds to the <strong>resistance</strong> value of the resistor. For instance, if there's a 10 Ω resistor between two junctions, the edge connecting those two nodes would have a weight of 10 Ω.</p>
+</li>
+</ul>
+<p><strong>Why use graphs?</strong></p>
+<ul>
+<li>Using graphs provides a <strong>structured and systematic way</strong> to model and analyze circuits. Graph theory allows us to manipulate and simplify complex circuits by identifying patterns, like series and parallel connections, through algorithms.</li>
+</ul>
+<h2 id="2-series-and-parallel-connections">2. Series and Parallel Connections</h2>
+<p>To understand how to calculate equivalent resistance in a circuit, it's essential to know what <strong>series</strong> and <strong>parallel connections</strong> are, and how they affect the total resistance.</p>
+<h3 id="series-connections">Series Connections:</h3>
+<ul>
+<li>
+<p><strong>Definition</strong>: Resistors are said to be in series if they are connected end-to-end, meaning the current flows through each resistor one after another, without any branching.</p>
+</li>
+<li>
+<p><strong>Example</strong>: If you have two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> in series, the total or equivalent resistance <span class="arithmatex">\(R_{\text{eq}}\)</span> is simply the sum of their individual resistances:
+  $$
+  R_{\text{eq}} = R_1 + R_2
+  $$</p>
+</li>
+<li>
+<p><strong>Graph Representation</strong>: In the graph, the resistors in series will be represented by edges that directly connect two nodes with no intermediate branches in between.</p>
+</li>
+</ul>
+<h3 id="parallel-connections">Parallel Connections:</h3>
+<ul>
+<li>
+<p><strong>Definition</strong>: Resistors are said to be in parallel if they are connected across the same two nodes (junctions), creating multiple paths for the current to flow.</p>
+</li>
+<li>
+<p><strong>Example</strong>: If you have two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> in parallel, the equivalent resistance <span class="arithmatex">\(R_{\text{eq}}\)</span> is calculated by the following formula:
+  $$
+  \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+  $$
+  This formula shows that the total resistance of parallel resistors is always less than the smallest individual resistor.</p>
+</li>
+<li>
+<p><strong>Graph Representation</strong>: In the graph, parallel resistors will be represented by edges that start and end at the same pair of nodes, indicating multiple paths.</p>
+</li>
+</ul>
+<h2 id="3-steps-in-the-algorithm-to-calculate-equivalent-resistance">3. Steps in the Algorithm to Calculate Equivalent Resistance</h2>
+<p>We use an <strong>iterative algorithm</strong> to simplify the graph step by step by reducing series and parallel resistors. Here's the process:</p>
+<ol>
+<li><strong>Detect and Reduce Series Connections</strong>: </li>
+<li>
+<p>When you identify two resistors in series, replace them with a new edge that has the resistance equal to the sum of the individual resistances.</p>
+</li>
+<li>
+<p><strong>Detect and Reduce Parallel Connections</strong>: </p>
+</li>
+<li>
+<p>When you identify two resistors in parallel, replace them with a new edge that has the resistance equal to the result of the parallel formula.</p>
+</li>
+<li>
+<p><strong>Repeat</strong>: </p>
+</li>
+<li>This process is repeated iteratively until only a single equivalent resistor remains. This resistor represents the <strong>total resistance</strong> of the entire circuit.</li>
+</ol>
+<h3 id="detailed-algorithm-step-by-step">Detailed Algorithm (Step-by-Step):</h3>
+<pre><code class="language-plaintext">function calculate_equivalent_resistance(circuit_graph):
+    # Keep reducing the graph until it has only one node (the final equivalent resistance)
+    while len(circuit_graph) &gt; 1:
+
+        # Step 1: Find all series connections and simplify them
+        for each edge (R1, R2) in the circuit:
+            if edge is a series connection:
+                # Combine the resistances into one
+                R_eq = R1 + R2
+                # Replace the series connection with the equivalent resistor
+                update the graph to reflect the new resistor
+
+        # Step 2: Find all parallel connections and simplify them
+        for each edge (R1, R2) in the circuit:
+            if edge is a parallel connection:
+                # Combine the resistances using the parallel formula
+                R_eq = 1 / (1/R1 + 1/R2)
+                # Replace the parallel connection with the equivalent resistor
+                update the graph to reflect the new resistor
+
+        # Step 3: Repeat the process until only one edge (equivalent resistance) remains
+    return the final equivalent resistance
+</code></pre>
+<h2 id="4-handling-nested-series-and-parallel-configurations">4. Handling Nested Series and Parallel Configurations</h2>
+<p>In real-world circuits, resistors often appear in more complex arrangements, like nested series or parallel configurations. Here’s how we can handle this complexity:</p>
+<h3 id="nested-series-and-parallel-combinations">Nested Series and Parallel Combinations:</h3>
+<p>A circuit can have a combination of resistors in series and parallel, and some of those combinations might themselves have nested configurations. For example, two resistors in series may be in parallel with another resistor, or vice versa.</p>
+<h3 id="how-to-solve-nested-configurations">How to Solve Nested Configurations:</h3>
+<ul>
+<li><strong>Step 1</strong>: Start by simplifying the innermost combination first. For example, if you have two resistors in series inside a parallel configuration, calculate their equivalent resistance as if they were a single resistor and simplify the circuit.</li>
+<li><strong>Step 2</strong>: After simplifying the inner combinations, treat the simplified result as a new single resistor and continue simplifying the circuit.</li>
+<li><strong>Step 3</strong>: Continue this process until you reduce the entire circuit to just one equivalent resistance.</li>
+</ul>
+<h2 id="5-example-walkthrough-with-nested-connections">5. Example Walkthrough with Nested Connections</h2>
+<p>Let’s take a slightly more complex circuit with nested series and parallel resistors:</p>
+<p><strong>Given:</strong>
+- Resistors <span class="arithmatex">\(R_1 = 10 \, \Omega\)</span>, <span class="arithmatex">\(R_2 = 20 \, \Omega\)</span>, <span class="arithmatex">\(R_3 = 30 \, \Omega\)</span>, and <span class="arithmatex">\(R_4 = 40 \, \Omega\)</span>.
+- <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are in series.
+- <span class="arithmatex">\(R_3\)</span> and <span class="arithmatex">\(R_4\)</span> are in parallel.
+- The combination of <span class="arithmatex">\(R_1 + R_2\)</span> (in series) is in parallel with the combination of <span class="arithmatex">\(R_3\)</span> and <span class="arithmatex">\(R_4\)</span> (in parallel).</p>
+<h3 id="steps">Steps:</h3>
+<ol>
+<li>
+<p><strong>Simplify the series connection (R1 + R2)</strong>:
+   $$
+   R_{\text{eq1}} = R_1 + R_2 = 10 + 20 = 30 \, \Omega
+   $$</p>
+</li>
+<li>
+<p><strong>Simplify the parallel connection (R3 and R4)</strong>:
+   $$
+   \frac{1}{R_{\text{eq2}}} = \frac{1}{R_3} + \frac{1}{R_4} = \frac{1}{30} + \frac{1}{40} = \frac{7}{120} \quad \Rightarrow \quad R_{\text{eq2}} = \frac{120}{7} \approx 17.14 \, \Omega
+   $$</p>
+</li>
+<li>
+<p><strong>Combine <span class="arithmatex">\(R_{\text{eq1}}\)</span> and <span class="arithmatex">\(R_{\text{eq2}}\)</span> (now in parallel)</strong>:
+   $$
+   \frac{1}{R_{\text{final}}} = \frac{1}{R_{\text{eq1}}} + \frac{1}{R_{\text{eq2}}} = \frac{1}{30} + \frac{1}{17.14} \quad \Rightarrow \quad R_{\text{final}} \approx 11.24 \, \Omega
+   $$</p>
+</li>
+</ol>
+<p>So, the total equivalent resistance of this circuit is approximately <span class="arithmatex">\(11.24 \, \Omega\)</span>.</p>
+<h2 id="6-graph-theory-algorithms-for-optimization">6. Graph Theory Algorithms for Optimization</h2>
+<p>In complex circuits with many resistors, an iterative approach might become inefficient, especially for large circuits with many nested configurations. Here are some techniques that could help:</p>
+<ul>
+<li>
+<p><strong>Depth-First Search (DFS)</strong>: This graph traversal technique can help explore all possible series and parallel combinations in the graph. It’s especially useful for exploring deep nested structures.</p>
+</li>
+<li>
+<p><strong>Breadth-First Search (BFS)</strong>: This traversal method might be better for identifying the simplest series or parallel connections early in the circuit.</p>
+</li>
+<li>
+<p><strong>Network Libraries</strong>: Libraries like <strong>networkx</strong> in Python can help automate graph manipulations and simplify the process, making it easier to work with larger circuits.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The key to calculating equivalent resistance using graph theory is breaking down the circuit into smaller parts (series and parallel combinations) and simplifying it iteratively. By representing the circuit as a graph, we can apply graph algorithms to reduce complex configurations, eventually finding the equivalent resistance. This approach is extremely powerful for complex circuits and can be implemented efficiently using computational tools and algorithms.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
