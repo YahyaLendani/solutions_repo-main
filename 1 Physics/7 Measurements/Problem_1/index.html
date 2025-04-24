@@ -279,7 +279,56 @@ $$</p>
 <div class="arithmatex">\[
 \sigma_T = \sqrt{\frac{1}{n - 1} \sum_{i=1}^{n} (t_i - \overline{T_{10}})^2}
 \]</div>
-<h3 id="notes">🔍 Notes</h3>
+<h3 id="example">Example</h3>
+<p>Given time measurements:
+$$
+T₁₀ = [15.22, 15.31, 15.26, 15.28, 15.30, 15.24, 15.25, 15.29, 15.23, 15.27]
+$$</p>
+<ul>
+<li>
+<p><strong>Mean</strong>:
+  $$
+  \overline{T_{10}} = 15.265 \ \text{s}
+  $$</p>
+</li>
+<li>
+<p><strong>Sample Deviation</strong>:</p>
+</li>
+<li><span class="arithmatex">\(15.22 - 15.265 = -0.045\)</span></li>
+<li><span class="arithmatex">\(15.31 - 15.265 = 0.045\)</span></li>
+<li>
+<p>etc.</p>
+</li>
+<li>
+<p><strong>Square of deviations (sample)</strong>:</p>
+</li>
+<li><span class="arithmatex">\((-0.045)^2 = 0.002025\)</span></li>
+<li><span class="arithmatex">\((0.045)^2 = 0.002025\)</span></li>
+<li>
+<p>etc.</p>
+</li>
+<li>
+<p><strong>Sum of squares</strong>:<br/>
+  $$
+  \sum (\text{Deviation}^2) = 0.00825
+  $$</p>
+</li>
+<li>
+<p><strong>Divide by degrees of freedom</strong>:<br/>
+  $$
+  \frac{0.00825}{9} = 0.000916
+  $$</p>
+</li>
+<li>
+<p><strong>Standard deviation</strong>:<br/>
+  $$
+  \sigma_T = \sqrt{0.000916} \approx 0.0303 \ \text{s}
+  $$</p>
+</li>
+</ul>
+<hr/>
+<p>This standard deviation tells you the <strong>spread</strong> or <strong>variability</strong> in your timing data. A smaller value means your measurements are more consistent!</p>
+<h3 id="notes">Notes</h3>
 <ul>
 <li>The standard value of <span class="arithmatex">\(g\)</span> is approximately <strong>9.81 m/s²</strong>.</li>
 <li>The discrepancy may arise due to:</li>
