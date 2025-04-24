@@ -120,6 +120,107 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="estimating-using-monte-carlo-methods">Estimating π using Monte Carlo Methods</h1>
+<h2 id="part-1-estimating-using-a-circle-geometric-probability">Part 1: Estimating π Using a Circle (Geometric Probability)</h2>
+<h3 id="theoretical-foundation">Theoretical Foundation</h3>
+<p>This method estimates π by comparing areas. We use a <strong>unit circle</strong> (radius = 1) inside a square with side 2x2.</p>
+<ul>
+<li><strong>Circle Area</strong> = π</li>
+<li><strong>Square Area</strong> = 4</li>
+</ul>
+<p>The probability that a random point falls inside the circle is:</p>
+<pre><code>P = Area of Circle / Area of Square = π / 4
+</code></pre>
+<p>Thus,</p>
+<pre><code>π ≈ 4 × (Points Inside Circle / Total Points)
+</code></pre>
+<h3 id="simulation-steps">Simulation Steps</h3>
+<ol>
+<li>Generate random (x, y) points in [-1, 1] × [-1, 1]</li>
+<li>Count points where <code>x² + y² &lt;= 1</code></li>
+<li>Estimate π using the ratio:
+   <code>π ≈ 4 × (# inside circle / total points)</code>
+<img alt="alt text" src="../output.png"/></li>
+</ol>
+<h3 id="visualization">Visualization</h3>
+<ul>
+<li><strong>Blue</strong> points are inside the circle</li>
+<li><strong>Red</strong> points are outside</li>
+</ul>
+<p>This forms a visual approximation of the circle.</p>
+<h3 id="convergence">Convergence</h3>
+<ul>
+<li>Error decreases as more points are sampled</li>
+<li>Convergence rate is proportional to <code>1/√N</code> (N = number of points)</li>
+</ul>
+<hr/>
+<h2 id="part-2-estimating-using-buffons-needle-probabilistic-geometry">Part 2: Estimating π Using Buffon’s Needle (Probabilistic Geometry)</h2>
+<h3 id="theoretical-foundation_1">Theoretical Foundation</h3>
+<p>Drop a needle of length <code>L</code> on a surface with lines spaced distance <code>D</code> apart. The probability that the needle crosses a line is:</p>
+<pre><code>P = (2L) / (πD)
+</code></pre>
+<p>Rearranging:</p>
+<pre><code>π ≈ (2L × # Throws) / (D × # Crossings)
+</code></pre>
+<h3 id="simulation-steps_1">Simulation Steps</h3>
+<ol>
+<li>Drop needles at random angles θ ∈ [0, π] and random vertical positions</li>
+<li>Compute vertical projection:
+   <code>y_tip = (L / 2) × sin(θ)</code></li>
+<li>A crossing occurs if this projection is greater than the distance to the nearest line</li>
+<li>Use the above formula to estimate π</li>
+</ol>
+<p><img alt="alt text" src="../output1.png"/></p>
+<h3 id="visualization_1">Visualization</h3>
+<ul>
+<li><strong>Blue</strong> needles cross a line</li>
+<li><strong>Red</strong> needles do not</li>
+<li>Dotted black lines show the parallel lines</li>
+</ul>
+<h3 id="convergence_1">Convergence</h3>
+<ul>
+<li>Slower than the circle method</li>
+<li>More variance due to trigonometric calculations</li>
+</ul>
+<hr/>
+<h2 id="comparison-of-methods">Comparison of Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Circle-Based Monte Carlo</th>
+<th>Buffon’s Needle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core Concept</td>
+<td>Area ratio inside square</td>
+<td>Needle-line crossing probability</td>
+</tr>
+<tr>
+<td>Formula</td>
+<td><code>π ≈ 4 × (inside/total)</code></td>
+<td><code>π ≈ (2L × N) / (D × C)</code></td>
+</tr>
+<tr>
+<td>Visual</td>
+<td>Dots in a circle/square</td>
+<td>Needles and parallel lines</td>
+</tr>
+<tr>
+<td>Convergence Rate</td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Simple</td>
+<td>Medium (involves sin, angle)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

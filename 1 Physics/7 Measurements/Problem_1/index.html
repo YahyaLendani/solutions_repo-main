@@ -120,6 +120,143 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="measuring-earths-gravitational-acceleration-using-a-pendulum">Measuring Earth's Gravitational Acceleration using a Pendulum</h1>
+<h2 id="step-by-step-solution">Step-by-Step Solution</h2>
+<hr/>
+<h3 id="1-data-overview">1.  Data Overview</h3>
+<ul>
+<li>
+<p><strong>Measured times for 10 oscillations (in seconds):</strong></p>
+</li>
+<li>
+<p><strong>Pendulum Length</strong>:<br/>
+$$ L = 1.25 \ \text{m} $$</p>
+</li>
+<li>
+<p><strong>Ruler Resolution</strong>:<br/>
+$$ \text{Ruler Resolution} = 0.01 \ \text{m} $$</p>
+</li>
+<li>
+<p><strong>Uncertainty in Length</strong>:
+$$
+\Delta L = \frac{0.01}{2} = 0.005 \ \text{m}
+$$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="2-time-analysis">2.  Time Analysis</h3>
+<ul>
+<li>
+<p><strong>Mean time for 10 oscillations</strong>:
+$$
+\overline{T_{10}} = 15.265 \ \text{s}
+$$</p>
+</li>
+<li>
+<p><strong>Standard deviation</strong>:
+$$
+\sigma_T = 0.0303 \ \text{s}
+$$</p>
+</li>
+<li>
+<p><strong>Uncertainty in mean time</strong>:
+$$
+\Delta T_{10} = \frac{\sigma_T}{\sqrt{n}} = \frac{0.0303}{\sqrt{10}} = 0.0096 \ \text{s}
+$$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="3-period-calculation">3.  Period Calculation</h3>
+<ul>
+<li>
+<p><strong>Period of 1 oscillation</strong>:
+$$
+T = \frac{\overline{T_{10}}}{10} = 1.5265 \ \text{s}
+$$</p>
+</li>
+<li>
+<p><strong>Uncertainty in period</strong>:
+$$
+\Delta T = \frac{\Delta T_{10}}{10} = 0.00096 \ \text{s}
+$$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="4-calculate-gravitational-acceleration">4.  Calculate Gravitational Acceleration</h3>
+<p>Using the pendulum formula:
+$$
+g = \frac{4\pi^2 L}{T^2}
+$$</p>
+<p>Plug in values:
+$$
+g = \frac{4\pi^2 \cdot 1.25}{(1.5265)^2} \approx 21.18 \ \text{m/s}^2
+$$</p>
+<hr/>
+<h3 id="5-uncertainty-propagation">5.  Uncertainty Propagation</h3>
+<div class="arithmatex">\[
+\Delta g = g \cdot \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2 \cdot \frac{\Delta T}{T} \right)^2}
+\]</div>
+<div class="arithmatex">\[
+\Delta g = 21.18 \cdot \sqrt{(0.004)^2 + (0.00126)^2} \approx 0.0888 \ \text{m/s}^2
+\]</div>
+<hr/>
+<h3 id="final-results-table">Final Results Table</h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>1.25 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta L\)</span></td>
+<td>0.005 m</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\overline{T_{10}}\)</span></td>
+<td>15.265 s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_T\)</span></td>
+<td>0.0303 s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta T_{10}\)</span></td>
+<td>0.0096 s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>1.5265 s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta T\)</span></td>
+<td>0.00096 s</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g\)</span></td>
+<td>21.18 m/s²</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta g\)</span></td>
+<td>0.0888 m/s²</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="notes">🔍 Notes</h3>
+<ul>
+<li>The standard value of <span class="arithmatex">\(g\)</span> is approximately <strong>9.81 m/s²</strong>.</li>
+<li>The discrepancy may arise due to:</li>
+<li>Timing errors.</li>
+<li>Air resistance.</li>
+<li>Angle of release exceeding small-angle approximation.</li>
+<li>Measurement resolution limitations.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
