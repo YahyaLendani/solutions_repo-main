@@ -13,7 +13,7 @@
 <script>
         // Current page data
         var mkdocs_page_name = "Problem 1";
-        var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
+        var mkdocs_page_input_path = "1 Physics\\4 Electromagnetism\\Problem_1.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -43,10 +43,10 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Physics</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal">Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="" href="../../../1 Physics/1 Mechanics/Problem_1.md">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -68,15 +68,17 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal">Electromagnetism</a>
-<ul>
-<li class="toctree-l2"><a class="" href="../../../1 Physics/5 Electromagnetism/Problem_1.md">Problem 1</a>
+<li class="toctree-l1 current"><a class="reference internal current">Electromagnetism</a>
+<ul class="current">
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<ul class="current">
+</ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">Circuits</a>
 <ul>
-<li class="toctree-l2"><a class="" href="../../../1 Physics/4 Circuits/Problem_1.md">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Problem 1</a>
 </li>
 </ul>
 </li>
@@ -107,6 +109,8 @@
 <div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
+<li class="breadcrumb-item">Physics</li>
+<li class="breadcrumb-item">Electromagnetism</li>
 <li class="breadcrumb-item active">Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
@@ -116,8 +120,316 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="simulating-the-effects-of-the-lorentz-force">Simulating the Effects of the Lorentz Force</h1>
+<h2 id="1-the-lorentz-force-in-detail">1. <strong>The Lorentz Force in Detail</strong></h2>
+<p>The <strong>Lorentz force</strong> is the force experienced by a charged particle moving through electric and magnetic fields. The equation governing this force is:</p>
+<div class="arithmatex">\[
+\vec{F} = q \vec{E} + q \vec{v} \times \vec{B}
+\]</div>
+<p>Where:
+- <strong><span class="arithmatex">\(q\)</span></strong> is the charge of the particle.
+- <strong><span class="arithmatex">\(\vec{E}\)</span></strong> is the electric field vector.
+- <strong><span class="arithmatex">\(\vec{v}\)</span></strong> is the velocity vector of the particle.
+- <strong><span class="arithmatex">\(\vec{B}\)</span></strong> is the magnetic field vector.
+- <strong><span class="arithmatex">\(\times\)</span></strong> represents the cross product, which makes the magnetic force always perpendicular to the velocity of the particle.</p>
+<h2 id="2-understanding-electric-and-magnetic-fields">2. <strong>Understanding Electric and Magnetic Fields</strong></h2>
+<p>Let’s break down how each field interacts with the charged particle:</p>
+<h3 id="a-electric-field-vece">a. <strong>Electric Field (<span class="arithmatex">\(\vec{E}\)</span>)</strong></h3>
+<p>The electric field applies a force directly on a charged particle, either pushing it in the direction of the field (if the charge is positive) or pulling it in the opposite direction (if the charge is negative).</p>
+<ul>
+<li>For a particle with charge <span class="arithmatex">\(q\)</span>, the force is given by:</li>
+</ul>
+<p>$$
+  \vec{F}_E = q \vec{E}
+  $$</p>
+<ul>
+<li>This force results in the particle accelerating in the direction of the electric field if the charge is positive or opposite if negative.</li>
+</ul>
+<h3 id="b-magnetic-field-vecb">b. <strong>Magnetic Field (<span class="arithmatex">\(\vec{B}\)</span>)</strong></h3>
+<p>The magnetic field influences a charged particle that is moving. Unlike the electric field, the magnetic force is <strong>always perpendicular</strong> to both the velocity of the particle and the magnetic field.</p>
+<ul>
+<li>The magnetic force is given by:</li>
+</ul>
+<p>$$
+  \vec{F}_B = q (\vec{v} \times \vec{B})
+  $$</p>
+<ul>
+<li>
+<p>This results in the particle experiencing a force that causes its path to curve. The magnitude of the force depends on the speed of the particle and the angle between its velocity and the magnetic field.</p>
+</li>
+<li>
+<p>If the velocity vector is perpendicular to the magnetic field, the particle will move in a circular trajectory with a radius that depends on its speed, mass, charge, and the magnetic field strength.</p>
+</li>
+</ul>
+<h2 id="3-types-of-particle-motion">3. <strong>Types of Particle Motion</strong></h2>
+<p>The particle's motion can vary based on the relative directions and magnitudes of the electric and magnetic fields. Let's look at some typical trajectories:</p>
+<h3 id="a-motion-in-a-uniform-magnetic-field">a. <strong>Motion in a Uniform Magnetic Field</strong></h3>
+<p>In a uniform magnetic field, if the particle’s velocity is perpendicular to the magnetic field, the magnetic force will cause the particle to move in a <strong>circular</strong> path. The radius of the circle, called the <strong>Larmor radius</strong>, is given by:</p>
+<div class="arithmatex">\[
+r = \frac{mv_{\perp}}{|q|B}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(m\)</span> is the mass of the particle.
+- <span class="arithmatex">\(v_{\perp}\)</span> is the component of the velocity perpendicular to the magnetic field.
+- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
+<p>This results in <strong>uniform circular motion</strong>, where the particle's speed remains constant, but its direction changes. This is called <strong>cyclotron motion</strong>, and is observed in devices like cyclotrons or in cosmic particle motion.</p>
+<h3 id="b-motion-in-a-combined-electric-and-magnetic-field">b. <strong>Motion in a Combined Electric and Magnetic Field</strong></h3>
+<p>When both electric and magnetic fields are present, the motion becomes more complicated. The <strong>electric field</strong> accelerates the particle in the direction of the field, while the <strong>magnetic field</strong> causes the particle to spiral or curve. This leads to <strong>helical motion</strong>, where the particle moves in a spiral trajectory.</p>
+<p>The direction of the spiral depends on the relative strengths and directions of the two fields. The electric field may also cause a <strong>drift</strong> in the direction of the field, which modifies the trajectory.</p>
+<h3 id="c-crossed-electric-and-magnetic-fields">c. <strong>Crossed Electric and Magnetic Fields</strong></h3>
+<p>When the electric and magnetic fields are perpendicular (i.e., "crossed fields"), the motion of the particle can be even more interesting. In this case:
+- The particle will experience both the drift due to the electric field and the curvature due to the magnetic field.
+- The combination of these two effects can lead to <strong>complex, spiral-like</strong> or even <strong>oscillatory</strong> motion depending on the relative strength of the fields.</p>
+<p>This configuration is often seen in phenomena like the <strong>Hall Effect</strong> and in devices like <strong>magnetic confinement systems</strong> (e.g., Tokamaks for plasma confinement).</p>
+<h2 id="4-simulation-of-particle-motion">4. <strong>Simulation of Particle Motion</strong></h2>
+<p>Now that we understand the theoretical principles, let’s look into how we can simulate this in Python. The goal is to compute the trajectory of a particle in response to different electric and magnetic field configurations.</p>
+<h3 id="a-euler-method-for-numerical-integration">a. <strong>Euler Method for Numerical Integration</strong></h3>
+<p>We can use numerical methods like Euler’s method or Runge-Kutta methods to solve the equations of motion. The basic idea is to update the particle's position and velocity at each timestep, using the Lorentz force to calculate the acceleration.</p>
+<p><strong>Euler's method</strong> is simple, but not the most accurate for complex systems. It updates the position and velocity by assuming the acceleration is constant over a small timestep:</p>
+<div class="arithmatex">\[
+\vec{v}(t + \Delta t) = \vec{v}(t) + \vec{a} \Delta t
+\]</div>
+<div class="arithmatex">\[
+\vec{r}(t + \Delta t) = \vec{r}(t) + \vec{v}(t) \Delta t
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(\vec{a} = \frac{\vec{F}}{m}\)</span> is the acceleration from the force.
+- <span class="arithmatex">\(\Delta t\)</span> is the small timestep used for updating the particle's position and velocity.</p>
+<p>This method is simple to implement but can accumulate errors, especially for longer simulations. For more accurate results, we can use more sophisticated methods like <strong>Runge-Kutta</strong>.</p>
+<h3 id="b-runge-kutta-method-rk4">b. <strong>Runge-Kutta Method (RK4)</strong></h3>
+<p>The Runge-Kutta method is more accurate than Euler’s method and provides a better approximation of the particle's motion. The fourth-order Runge-Kutta method (RK4) is widely used for solving differential equations.</p>
+<p>It works by evaluating the acceleration at several intermediate points within each timestep, which provides a more accurate estimate of the new position and velocity.</p>
+<p>Here is a basic structure for implementing RK4 to solve the particle's motion:</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+import os
+import shutil
+
+# Constants
+q = 1.6e-19  # Charge of the particle (C)
+m = 9.11e-31  # Mass of the particle (kg)
+B = np.array([0, 0, 1e-3], dtype=np.float64)  # Magnetic field along z-axis (T)
+E = np.array([0, 0, 0], dtype=np.float64)  # No electric field in this example
+v_initial = np.array([1e5, 0, 0], dtype=np.float64)  # Initial velocity in x-direction (m/s)
+
+# Time step and total time
+dt = 1e-9  # Time step (s)
+T = 1e-6  # Total time (s)
+steps = int(T / dt)
+
+# Initial conditions
+r = np.array([0, 0, 0], dtype=np.float64)  # Initial position (m)
+v = v_initial * 0.1  # Reduced velocity to keep the particle inside a smaller region
+
+# Store the trajectory for plotting
+trajectory = []
+
+# Function to compute the Lorentz force
+def lorentz_force(v, r, q, m, E, B):
+    F = q * (E + np.cross(v, B))  # Lorentz force
+    a = F / m  # Acceleration
+    return a
+
+# Initialize the figure and 3D axis for the animation
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.set_xlim(-0.5e-3, 0.5e-3)
+ax.set_ylim(-0.5e-3, 0.5e-3)
+ax.set_zlim(-0.5e-3, 0.5e-3)
+
+# Particle plot
+particle, = ax.plot([], [], [], 'bo', markersize=5)  # Particle position
+trail, = ax.plot([], [], [], 'b-', lw=0.5)  # Trajectory plot
+
+# Initialize empty data for the trajectory
+trajectory_data = []
+
+# Create a directory to store the frames
+if not os.path.exists('frames'):
+    os.makedirs('frames')
+
+# Function to update particle position and trajectory manually
+def update_plot(frame):
+    global r, v, trajectory_data
+
+    # Compute the acceleration due to the Lorentz force
+    a = lorentz_force(v, r, q, m, E, B)
+
+    # Update velocity and position using Euler's method
+    v += a * dt
+    r += v * dt
+
+    # Clamp the position to stay inside the plot boundaries (smaller range)
+    r = np.clip(r, [-0.5e-3, -0.5e-3, -0.5e-3], [0.5e-3, 0.5e-3, 0.5e-3])  # Keeps particle inside the box
+
+    # If the particle touches the boundary, stop the animation
+    if np.any(np.abs(r) &gt;= 0.5e-3):  # Check if any coordinate exceeds the boundary
+        print(f"Particle touched the boundary at step {frame}")
+        return False  # Return False to stop the animation
+
+    # Append the new position to the trajectory
+    trajectory_data.append(r.copy())
+    trajectory_array = np.array(trajectory_data)
+
+    # Ensure the data is passed as a sequence (array)
+    particle.set_data([r[0]], [r[1]])  # Updating X, Y as sequences
+    particle.set_3d_properties([r[2]])  # Updating Z as sequence
+
+    # Update the trajectory (path of the particle)
+    trail.set_data(trajectory_array[:, 0], trajectory_array[:, 1])  # Updating X, Y
+    trail.set_3d_properties(trajectory_array[:, 2])  # Updating Z
+
+    # Save the current figure as an image
+    plt.savefig(f"frames/frame_{frame}.png")
+
+    return True  # Return True to continue the animation
+
+# Generate frames and store them as images
+for step in range(steps):
+    if not update_plot(step):
+        break  # Stop the animation if the particle touches the boundary
+
+# Create a GIF from the saved frames
+frames = []
+for step in range(steps):
+    frame_path = f"frames/frame_{step}.png"
+    if os.path.exists(frame_path):
+        frames.append(Image.open(frame_path))
+
+# Save the GIF
+frames[0].save('lorentz_force_3d_animation.gif', save_all=True, append_images=frames[1:], loop=0, duration=1000 / 30)
+
+# Optionally display the final animation
+plt.show()
+
+# Clean up the temporary frame images
+shutil.rmtree('frames')
+</code></pre>
+<p><img alt="alt text" src="../lorentz_force_3d_animation.gif"/>
+<img alt="alt text" src="../elliptical_motion_3d_animation.gif"/></p>
+<h1 id="description-of-the-lorentz-force-simulation-code">Description of the Lorentz Force Simulation Code</h1>
+<p>This Python code simulates the motion of a <strong>charged particle</strong> in a <strong>magnetic field</strong> and creates a <strong>3D animation</strong> of its trajectory, which is then saved as a <strong>GIF</strong>.</p>
+<h2 id="key-features">Key Features:</h2>
+<ol>
+<li><strong>Helical Motion Simulation</strong>:</li>
+<li>The particle moves in a <strong>spiral or helical</strong> trajectory due to the Lorentz force caused by its interaction with the magnetic field.</li>
+<li>
+<p>The <strong>magnetic field</strong> is applied along the z-axis, and the particle's motion is divided into two components:</p>
+<ul>
+<li><strong>Perpendicular velocity</strong>: Causes the particle to move in a circular path around the magnetic field.</li>
+<li><strong>Parallel velocity</strong>: Moves the particle along the z-axis, creating the spiral motion.</li>
+</ul>
+</li>
+<li>
+<p><strong>Physical Setup</strong>:</p>
+</li>
+<li>The particle has a <strong>charge <span class="arithmatex">\(q\)</span></strong> and <strong>mass <span class="arithmatex">\(m\)</span></strong>, which influences how it responds to the magnetic field.</li>
+<li>
+<p>The <strong>magnetic field <span class="arithmatex">\(\mathbf{B}\)</span></strong> is defined along the z-axis, affecting the particle's trajectory.</p>
+</li>
+<li>
+<p><strong>Lorentz Force Calculation</strong>:</p>
+</li>
+<li>The <strong>Lorentz force</strong> is given by the equation <span class="arithmatex">\(\mathbf{F} = q (\mathbf{v} \times \mathbf{B})\)</span>, where <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity vector of the particle and <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field vector.</li>
+<li>
+<p>This force acts perpendicular to the velocity of the particle and results in circular motion in the XY-plane and linear motion along the Z-axis.</p>
+</li>
+<li>
+<p><strong>Euler’s Method for Numerical Integration</strong>:</p>
+</li>
+<li>The position and velocity of the particle are updated over small time steps using <strong>Euler’s method</strong>.</li>
+<li>
+<p>The particle's position is updated as <span class="arithmatex">\(\mathbf{r}(t + dt) = \mathbf{r}(t) + \mathbf{v}(t) \cdot dt\)</span>, and the velocity is updated using the acceleration obtained from the Lorentz force.</p>
+</li>
+<li>
+<p><strong>Visualization</strong>:</p>
+</li>
+<li>A <strong>3D plot</strong> is created using <strong>Matplotlib</strong> to visualize the particle's motion in space.</li>
+<li>The trajectory is plotted as a path behind the particle as it moves in 3D space.</li>
+<li>
+<p>The particle’s current position is plotted as a <strong>blue dot</strong>.</p>
+</li>
+<li>
+<p><strong>Animation</strong>:</p>
+</li>
+<li>The <strong>Matplotlib animation</strong> functionality is used to update the plot at each time step, simulating the motion of the particle.</li>
+<li>
+<p>Each frame of the animation is saved as an image using <code>plt.savefig()</code>.</p>
+</li>
+<li>
+<p><strong>GIF Creation</strong>:</p>
+</li>
+<li>After generating all frames, the <strong>Pillow library</strong> is used to convert the frames into a GIF. </li>
+<li>The frames are combined into a <strong>GIF</strong> with a specified frame rate (30 frames per second in this case).</li>
+<li>
+<p>The GIF is saved as <code>lorentz_force_3d_animation.gif</code> and can be viewed in any image viewer or browser.</p>
+</li>
+<li>
+<p><strong>Cleanup</strong>:</p>
+</li>
+<li>After the GIF is created, the <strong>temporary frame images</strong> used for the animation are deleted to clean up resources.</li>
+</ol>
+<h2 id="workflow-of-the-code">Workflow of the Code:</h2>
+<ol>
+<li><strong>Initial Setup</strong>:</li>
+<li>Constants such as the charge <span class="arithmatex">\(q\)</span>, mass <span class="arithmatex">\(m\)</span>, magnetic field <span class="arithmatex">\(\mathbf{B}\)</span>, and initial velocity are defined.</li>
+<li>
+<p>The <strong>initial position</strong> and <strong>velocity</strong> of the particle are set, with the particle moving in a circular path and also having a velocity along the z-axis to elevate.</p>
+</li>
+<li>
+<p><strong>Calculation of Lorentz Force</strong>:</p>
+</li>
+<li>At each time step, the <strong>Lorentz force</strong> is calculated using the current velocity and the magnetic field.</li>
+<li>
+<p>The <strong>acceleration</strong> due to the force is computed, and the particle’s velocity and position are updated accordingly.</p>
+</li>
+<li>
+<p><strong>Updating the Plot</strong>:</p>
+</li>
+<li>For each time step, the particle’s position is updated on the 3D plot.</li>
+<li>
+<p>The path traced by the particle is recorded, and the trajectory is updated on the plot.</p>
+</li>
+<li>
+<p><strong>Saving Frames</strong>:</p>
+</li>
+<li>
+<p>Each frame of the simulation is saved as a PNG image using <code>plt.savefig()</code> within the <code>update_plot()</code> function.</p>
+</li>
+<li>
+<p><strong>Creating the GIF</strong>:</p>
+</li>
+<li>
+<p>After generating all frames, the images are loaded and combined into a GIF using the <strong>Pillow</strong> library. The GIF is saved with a frame duration of 1000/30 ms to achieve a 30 FPS animation.</p>
+</li>
+<li>
+<p><strong>Displaying and Saving</strong>:</p>
+</li>
+<li>
+<p>The final animation is displayed in the plot window, and the GIF is saved in the working directory.</p>
+</li>
+<li>
+<p><strong>Cleanup</strong>:</p>
+</li>
+<li>The temporary files used for generating frames are deleted after the GIF is created.</li>
+</ol>
+<h2 id="output">Output:</h2>
+<ul>
+<li>The final output is a <strong>GIF file</strong> (<code>lorentz_force_3d_animation.gif</code>) that shows the <strong>helical motion</strong> of the charged particle in 3D space under the influence of a magnetic field.</li>
+<li>The particle moves in a circular path in the XY-plane while <strong>elevating</strong> along the Z-axis, visualizing a typical <strong>spiral trajectory</strong> of a charged particle in a magnetic field.</li>
+</ul>
+<h2 id="additional-considerations">Additional Considerations:</h2>
+<ul>
+<li><strong>Customization</strong>: You can adjust parameters such as the particle's initial velocity, the magnetic field strength, and the time step to explore how different conditions affect the motion.</li>
+<li><strong>Efficiency</strong>: Euler's method is simple but can accumulate error over time. For higher accuracy, more advanced numerical methods (like the Runge-Kutta method) can be used.</li>
+</ul>
 </div>
 </div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../../3%20Waves/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../../5%20Circuits/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
@@ -131,6 +443,8 @@
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../../3%20Waves/Problem_1/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../../5%20Circuits/Problem_1/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../../../js/jquery-3.6.0.min.js"></script>
