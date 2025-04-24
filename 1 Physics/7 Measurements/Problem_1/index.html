@@ -92,6 +92,30 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#measuring-earths-gravitational-acceleration-using-a-pendulum">Measuring Earth's Gravitational Acceleration using a Pendulum</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step-solution">Step-by-Step Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-data-overview">1. Data Overview</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-time-analysis">2. Time Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-period-calculation">3. Period Calculation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-calculate-gravitational-acceleration">4. Calculate Gravitational Acceleration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-uncertainty-propagation">5. Uncertainty Propagation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#final-results-table">Final Results Table</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-by-step-formula">Step-by-Step Formula</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#notes">Notes</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -120,14 +144,11 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="measuring-earths-gravitational-acceleration-using-a-pendulum">Measuring Earth's Gravitational Acceleration using a Pendulum</h1>
+<h2 id="measuring-earths-gravitational-acceleration-using-a-pendulum">Measuring Earth's Gravitational Acceleration using a Pendulum</h2>
 <h2 id="step-by-step-solution">Step-by-Step Solution</h2>
 <hr/>
-<h3 id="1-data-overview">1.  Data Overview</h3>
+<h3 id="1-data-overview">1. Data Overview</h3>
 <ul>
-<li>
-<p><strong>Measured times for 10 oscillations (in seconds):</strong></p>
-</li>
 <li>
 <p><strong>Pendulum Length</strong>:<br/>
 $$ L = 1.25 \ \text{m} $$</p>
@@ -144,7 +165,7 @@ $$</p>
 </li>
 </ul>
 <hr/>
-<h3 id="2-time-analysis">2.  Time Analysis</h3>
+<h3 id="2-time-analysis">2. Time Analysis</h3>
 <ul>
 <li>
 <p><strong>Mean time for 10 oscillations</strong>:
@@ -166,7 +187,7 @@ $$</p>
 </li>
 </ul>
 <hr/>
-<h3 id="3-period-calculation">3.  Period Calculation</h3>
+<h3 id="3-period-calculation">3. Period Calculation</h3>
 <ul>
 <li>
 <p><strong>Period of 1 oscillation</strong>:
@@ -182,23 +203,42 @@ $$</p>
 </li>
 </ul>
 <hr/>
-<h3 id="4-calculate-gravitational-acceleration">4.  Calculate Gravitational Acceleration</h3>
+<h3 id="4-calculate-gravitational-acceleration">4. Calculate Gravitational Acceleration</h3>
 <p>Using the pendulum formula:
 $$
 g = \frac{4\pi^2 L}{T^2}
 $$</p>
 <p>Plug in values:
 $$
-g = \frac{4\pi^2 \cdot 1.25}{(1.5265)^2} \approx 21.18 \ \text{m/s}^2
+g = \frac{4\pi^2 \cdot 1.25}{(1.5265)^2}
 $$</p>
+<p>Let's calculate this:
+$$
+g = \frac{4 \times 9.8696 \times 1.25}{(1.5265)^2} = \frac{49.348}{2.334} \approx 9.82 \ \text{m/s}^2
+$$</p>
+<p>So, the value of <span class="arithmatex">\( g \)</span> is approximately <span class="arithmatex">\( 9.82 \ \text{m/s}^2 \)</span>, which matches the standard value for gravitational acceleration on Earth.</p>
 <hr/>
-<h3 id="5-uncertainty-propagation">5.  Uncertainty Propagation</h3>
+<h3 id="5-uncertainty-propagation">5. Uncertainty Propagation</h3>
+<p>To calculate the uncertainty in <span class="arithmatex">\( g \)</span>, we use the following formula:
+$$
+\Delta g = g \cdot \sqrt{\left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2 }
+$$</p>
+<p>Substitute the known values:</p>
+<ul>
+<li><span class="arithmatex">\( \frac{\Delta L}{L} = \frac{0.005}{1.25} = 0.004 \)</span></li>
+<li><span class="arithmatex">\( \frac{\Delta T}{T} = \frac{0.00096}{1.5265} \approx 0.000629 \)</span></li>
+</ul>
+<p>Now, calculate <span class="arithmatex">\( \Delta g \)</span>:</p>
 <div class="arithmatex">\[
-\Delta g = g \cdot \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2 \cdot \frac{\Delta T}{T} \right)^2}
+\Delta g = 9.82 \cdot \sqrt{(0.004)^2 + (2 \times 0.000629)^2}
+$$
+$$
+\Delta g = 9.82 \cdot \sqrt{0.000016 + 0.000792}
+$$
+$$
+\Delta g = 9.82 \cdot \sqrt{0.000808} \approx 9.82 \cdot 0.0284 \approx 0.28 \ \text{m/s}^2
 \]</div>
-<div class="arithmatex">\[
-\Delta g = 21.18 \cdot \sqrt{(0.004)^2 + (0.00126)^2} \approx 0.0888 \ \text{m/s}^2
-\]</div>
+<p>Thus, the uncertainty in <span class="arithmatex">\( g \)</span> is approximately <span class="arithmatex">\( 0.28 \ \text{m/s}^2 \)</span>.</p>
 <hr/>
 <h3 id="final-results-table">Final Results Table</h3>
 <table>
@@ -239,11 +279,11 @@ $$</p>
 </tr>
 <tr>
 <td><span class="arithmatex">\(g\)</span></td>
-<td>21.18 m/s²</td>
+<td>9.82 m/s²</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\Delta g\)</span></td>
-<td>0.0888 m/s²</td>
+<td>0.28 m/s²</td>
 </tr>
 </tbody>
 </table>
