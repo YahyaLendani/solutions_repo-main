@@ -13,7 +13,7 @@
 <script>
         // Current page data
         var mkdocs_page_name = "Problem 1";
-        var mkdocs_page_input_path = "1 Physics\\5 Circuits\\Problem_1.md";
+        var mkdocs_page_input_path = "1 Physics/5 Circuits/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal">Mechanics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="" href="../../../1 Physics/1 Mechanics/Problem_1.md">Problem 1</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../1%20Mechanics/Problem_2/">Problem 2</a>
 </li>
@@ -465,6 +465,83 @@ visualize_equivalent_resistance(G, 'B+', 'B-')
 <img alt="alt text" src="../image-9.png"/>
 <img alt="alt text" src="../image-10.png"/>
 <img alt="alt text" src="../image-11.png"/></p>
+<h1 id="equivalent-resistance-calculator-and-visualizer">Equivalent Resistance Calculator and Visualizer</h1>
+<h2 id="what-this-code-does">What This Code Does</h2>
+<p>This Python code calculates and visually demonstrates the <strong>equivalent resistance</strong> of an electrical circuit composed of resistors connected in series and parallel. It models the circuit as a graph, where:</p>
+<ul>
+<li><strong>Nodes</strong> represent connection points (junctions) in the circuit.</li>
+<li><strong>Edges</strong> represent resistors, each with an associated resistance value.</li>
+</ul>
+<p>The code progressively simplifies the circuit by <strong>combining series and parallel resistors step-by-step</strong>, showing each simplification visually. The final output is the <strong>single equivalent resistor</strong> that represents the entire circuit between a designated start node (battery positive terminal) and end node (battery negative terminal).</p>
+<hr/>
+<h2 id="how-it-works-step-by-step">How It Works — Step by Step</h2>
+<h3 id="1-modeling-the-circuit-as-a-graph">1. Modeling the Circuit as a Graph</h3>
+<ul>
+<li>The circuit is represented as a <strong>NetworkX MultiGraph</strong> to support multiple edges (parallel resistors) between the same two nodes.</li>
+<li>Each edge has a <code>'resistance'</code> attribute specifying its resistance value.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-python">G.add_edge('B+', 'R2', resistance=2)  # Resistor R2 with 2Ω between nodes 'B+' and 'R2'
+</code></pre>
+<h2 id="2-visualizing-the-circuit">2. Visualizing the Circuit</h2>
+<ul>
+<li>The function <code>draw_graph</code> uses <strong>matplotlib</strong> and NetworkX to draw the graph.</li>
+<li>Nodes have different pastel colors and shapes depending on their role:</li>
+<li>Start node (battery positive) — pastel blue circle</li>
+<li>End node (battery negative) — pastel pink square</li>
+<li>Intermediate nodes — pastel green circles</li>
+<li>Edges are drawn with curved lines for clarity.</li>
+<li>Edge labels show the resistance value, spaced to avoid overlap even if multiple edges connect the same nodes.</li>
+<li>Highlighted edges (those currently being combined) are shown in red (before combining) and green (after combining).</li>
+<li>Node and edge labels have clear backgrounds and shadows for readability.</li>
+</ul>
+<hr/>
+<h2 id="3-simplifying-the-circuit">3. Simplifying the Circuit</h2>
+<p>The core simplification logic is in the <code>simplify_step</code> function. At each step, it tries to:</p>
+<h3 id="a-combine-series-resistors">a) Combine Series Resistors</h3>
+<ul>
+<li>A node with <strong>exactly two neighbors</strong> (and not start/end nodes) is a candidate for series combination.</li>
+<li>The two resistors connected to this node are combined by <strong>summing their resistances</strong>:</li>
+</ul>
+<div class="arithmatex">\[
+R_{\text{eq}} = R_1 + R_2
+\]</div>
+<ul>
+<li>The node is removed, and the two neighbors are connected by a single edge with the equivalent resistance.</li>
+<li>If an edge already exists between those two neighbors, the combined resistor is put in <strong>parallel</strong> with the existing one using:</li>
+</ul>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_{\text{old}}} + \frac{1}{R_{\text{new}}}
+\]</div>
+<hr/>
+<h3 id="b-combine-parallel-resistors">b) Combine Parallel Resistors</h3>
+<ul>
+<li>If there are <strong>multiple edges</strong> (resistors) directly between the same two nodes, they can be combined using the parallel resistor formula:</li>
+</ul>
+<div class="arithmatex">\[
+\frac{1}{R_{\text{eq}}} = \sum_i \frac{1}{R_i}
+\]</div>
+<ul>
+<li>All parallel edges are replaced by a single edge with the equivalent resistance.</li>
+</ul>
+<hr/>
+<h2 id="4-iterative-simplification-until-done">4. Iterative Simplification Until Done</h2>
+<ul>
+<li>The <code>visualize_equivalent_resistance</code> function calls <code>simplify_step</code> repeatedly until no more simplifications are possible or only two nodes remain (start and end).</li>
+<li>At each step, the graph is redrawn to show the current state, highlighting the resistors being combined.</li>
+<li>After completion, the final equivalent resistance between start and end nodes is printed and visualized.</li>
+</ul>
+<hr/>
+<h2 id="5-example-circuit">5. Example Circuit</h2>
+<p>The example circuit modeled in the code consists of nodes <code>'B+'</code>, <code>'B-'</code> and resistors <code>'R1'</code> to <code>'R5'</code> with given resistances. The code simplifies this stepwise and visually demonstrates how the overall resistance is reduced to a single equivalent resistor.</p>
+<hr/>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Input:</strong> A graph representation of the circuit with resistors as edges.</li>
+<li><strong>Process:</strong> Iterative reduction of series and parallel resistors.</li>
+<li><strong>Output:</strong> Step-by-step visual simplification and the final equivalent resistance.</li>
+</ul>
+<hr/>
 <h2 id="6-graph-theory-algorithms-for-optimization">6. Graph Theory Algorithms for Optimization</h2>
 <p>In complex circuits with many resistors, an iterative approach might become inefficient, especially for large circuits with many nested configurations. Here are some techniques that could help:</p>
 <ul>
