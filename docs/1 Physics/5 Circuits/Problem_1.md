@@ -337,6 +337,102 @@ visualize_equivalent_resistance(G, 'B+', 'B-')
 ![alt text](image-10.png)
 ![alt text](image-11.png)
 
+# Equivalent Resistance Calculator and Visualizer
+
+## What This Code Does
+
+This Python code calculates and visually demonstrates the **equivalent resistance** of an electrical circuit composed of resistors connected in series and parallel. It models the circuit as a graph, where:
+
+- **Nodes** represent connection points (junctions) in the circuit.
+- **Edges** represent resistors, each with an associated resistance value.
+
+The code progressively simplifies the circuit by **combining series and parallel resistors step-by-step**, showing each simplification visually. The final output is the **single equivalent resistor** that represents the entire circuit between a designated start node (battery positive terminal) and end node (battery negative terminal).
+
+---
+
+## How It Works — Step by Step
+
+### 1. Modeling the Circuit as a Graph
+
+- The circuit is represented as a **NetworkX MultiGraph** to support multiple edges (parallel resistors) between the same two nodes.
+- Each edge has a `'resistance'` attribute specifying its resistance value.
+
+Example:
+
+```python
+G.add_edge('B+', 'R2', resistance=2)  # Resistor R2 with 2Ω between nodes 'B+' and 'R2'
+```
+## 2. Visualizing the Circuit
+
+- The function `draw_graph` uses **matplotlib** and NetworkX to draw the graph.
+- Nodes have different pastel colors and shapes depending on their role:
+  - Start node (battery positive) — pastel blue circle
+  - End node (battery negative) — pastel pink square
+  - Intermediate nodes — pastel green circles
+- Edges are drawn with curved lines for clarity.
+- Edge labels show the resistance value, spaced to avoid overlap even if multiple edges connect the same nodes.
+- Highlighted edges (those currently being combined) are shown in red (before combining) and green (after combining).
+- Node and edge labels have clear backgrounds and shadows for readability.
+
+---
+
+## 3. Simplifying the Circuit
+
+The core simplification logic is in the `simplify_step` function. At each step, it tries to:
+
+### a) Combine Series Resistors
+
+- A node with **exactly two neighbors** (and not start/end nodes) is a candidate for series combination.
+- The two resistors connected to this node are combined by **summing their resistances**:
+
+$$
+R_{\text{eq}} = R_1 + R_2
+$$
+
+- The node is removed, and the two neighbors are connected by a single edge with the equivalent resistance.
+- If an edge already exists between those two neighbors, the combined resistor is put in **parallel** with the existing one using:
+
+$$
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_{\text{old}}} + \frac{1}{R_{\text{new}}}
+$$
+
+---
+
+### b) Combine Parallel Resistors
+
+- If there are **multiple edges** (resistors) directly between the same two nodes, they can be combined using the parallel resistor formula:
+
+$$
+\frac{1}{R_{\text{eq}}} = \sum_i \frac{1}{R_i}
+$$
+
+- All parallel edges are replaced by a single edge with the equivalent resistance.
+
+---
+
+## 4. Iterative Simplification Until Done
+
+- The `visualize_equivalent_resistance` function calls `simplify_step` repeatedly until no more simplifications are possible or only two nodes remain (start and end).
+- At each step, the graph is redrawn to show the current state, highlighting the resistors being combined.
+- After completion, the final equivalent resistance between start and end nodes is printed and visualized.
+
+---
+
+## 5. Example Circuit
+
+The example circuit modeled in the code consists of nodes `'B+'`, `'B-'` and resistors `'R1'` to `'R5'` with given resistances. The code simplifies this stepwise and visually demonstrates how the overall resistance is reduced to a single equivalent resistor.
+
+---
+
+## Summary
+
+- **Input:** A graph representation of the circuit with resistors as edges.
+- **Process:** Iterative reduction of series and parallel resistors.
+- **Output:** Step-by-step visual simplification and the final equivalent resistance.
+
+---
+
+
 
 
 ## 6. Graph Theory Algorithms for Optimization
