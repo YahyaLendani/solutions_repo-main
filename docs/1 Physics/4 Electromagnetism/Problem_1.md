@@ -220,6 +220,8 @@ shutil.rmtree('frames')
 ```
 ![alt text](lorentz_force_3d_animation.gif)
 ![alt text](elliptical_motion_3d_animation.gif)
+![alt text](cylindrical_motion_3d_animation.gif)
+![alt text](spiral_motion.gif)
 
 # Description of the Lorentz Force Simulation Code
 
